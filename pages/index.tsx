@@ -3,14 +3,9 @@ import { faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons/faReact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ReactNode } from 'react';
+import Technology from "@/components/technologies";
 
 
-interface technologyprop {
-  icon : ReactNode;
-  title : string;
-  des : string;
-  link : string;
-}
 
 const react = {
   icon: <FontAwesomeIcon icon={faReact} size = "2xl"/>,
@@ -41,19 +36,8 @@ const fontawesome = {
 }
 
 
-const Technology: React.FC<{ data: technologyprop }> = ({ data }) => {
-  return (
-    <a href={data.link} className="">
-      <div className="p-4 rounded-lg shadow-md hover:bg-blue-300 transition duration-300 ease-in-out">
-        <div className="text-3xl  flex justify-center">
-          {data.icon}
-        </div>
-        <div className="text-xl font-semibold text-center my-2">{data.title}</div>
-        <div className="text-sm text-gray-700 text-center">{data.des}</div>
-      </div>
-    </a>
-  );
-};
+
+
 
 export default function Home() {
   return (
@@ -61,9 +45,9 @@ export default function Home() {
           <div className='w-3/5 mx-auto'>
               <div className="mb-10">
                   <div className="text-center mt-10">
-                  <h1 className="font-bold text-5xl mb-4">Welcome to my Portfolio!</h1>
+                  <h1 className="font-bold text-5xl mb-4 border-b-2 border-purple inline-block ">Welcome to my Portfolio!</h1>
                     <div className="flex justify-center"> <img src="/title.svg" alt="My Icon" /></div>
-                      <p className="text-xl mt-10 font-bold"> Hey. Im Cary! </p>
+                      <p className="text-xl mt-10 font-bold text-purple"> Hey. Im Cary! </p>
                       <p className="text-xl mt-2"> </p>
                       <p className="text-xl mt-2"> Hey! </p>
                       <p className="text-xl mt-2"> Hey! </p>

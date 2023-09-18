@@ -57,6 +57,15 @@ const Header: React.FC = () => {
         </div>
         <div className={`md:flex ${isOpen ? 'block' : 'hidden'}`}>
           <ul className="md:flex space-x-4 items-center">
+          <li>
+              <a
+                href="about"
+                className="hover:text-gray-400 transition duration-300 ease-in-out"
+              >
+                About
+              </a>
+            </li>
+            
             <li>
               <a
                 href="education"
@@ -65,7 +74,7 @@ const Header: React.FC = () => {
                 Education
               </a>
             </li>
-            <li>
+            <li>  
               <a
                 href="projects"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
