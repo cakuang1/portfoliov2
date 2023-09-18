@@ -139,7 +139,10 @@ export default function About() {
               </div>
                     <div className="text-center mb-4">
                       <h1 className="font-bold text-3xl inline-block border-b-2 border-purple">Skills</h1>
+
                       <h2 className="mt-8 font-bold text-2xl">Here are some of the tools I have used in my projects</h2>
+
+
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-2">
                       <div className="languages">
@@ -166,7 +169,6 @@ export default function About() {
                           <Skill data={rails}/> 
                           <Skill data={nextjs}/> 
 
-                  
                           </div></div>
                       <div>  
                         <h2 className="text-purple font-bold text-lg">Other</h2>
@@ -179,6 +181,7 @@ export default function About() {
                           <Skill data={postgres }/> 
                           </div>
                         </div>
+
                     </div>
 
                 </div>
