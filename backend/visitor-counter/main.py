@@ -4,7 +4,7 @@ import os
 dynamodb = boto3.client('dynamodb', region_name=os.environ['AWS_REGION'])
 table_name = os.environ['DYNAMODB_TABLE']
 
-
+    
 def lambda_handler(event, context):
     try:
         # Increment the total click count
