@@ -6,6 +6,7 @@ import Link from "next/link";
         image :string;
         title: string;
         description: string;
+        languages:string[];
         technologies :string[];
         functionality : string[];
         link: string;
@@ -18,11 +19,11 @@ import Link from "next/link";
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
         <Link href={items.link}>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-      <div className="rounded-lg hover:bg-gray-100 mt-2 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg  mt-2 p-2 ease-in-out">
+      <div className=" ">
       <div className="text-lg">
         <h3 className="font-bold  text-2xl mb-2 sm:text-3xl ">
-          Stock Simulator
+          {items.title}
         </h3>
       </div>
       <div className="flex mt-8">
@@ -34,8 +35,7 @@ import Link from "next/link";
         <div className="ml-4">
           <h3 className="font-medium  leading-6 text-lg">Description</h3>
           <p className="text-muted mt-2">
-            A collection of loading spinner components built for ReactJS, with zero external
-            dependencies. Each component includes storybook demos and documentation.
+            {items.description}
           </p>
         </div>
       </div>
@@ -62,14 +62,20 @@ import Link from "next/link";
           </div>
         </div>
         <div className="ml-4">
-          <h3 className="font-medium dark:text-white leading-6 text-lg">Technologies</h3>
+          <h3 className="font-medium dark:text-white leading-6 text-lg">Languages</h3>
+          <p>
+          {items.languages.join(' · ')}
+          </p>
+        </div>
+        <div className="ml-4">
+          <h3 className="font-medium dark:text-white leading-6 text-lg">Frameworks/Tools</h3>
           <p>
           {items.technologies.join(' · ')}
           </p>
         </div>
       </div>
     </div>
-    <div className=""></div>
+    <div className=""><img src="pipeline.svg" className="w-full h-full"></img></div>
     </div></Link>
     );
   };
