@@ -21,6 +21,13 @@ const next = {
   link : 'https://nextjs.org/'
 }
 
+const ts = {
+  icon: <svg xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M12.5 8v-.167c0-.736-.597-1.333-1.333-1.333H10a1.5 1.5 0 1 0 0 3h1a1.5 1.5 0 0 1 0 3h-1A1.5 1.5 0 0 1 8.5 11M8 6.5H3m2.5 0V13M.5.5h14v14H.5V.5Z"/></svg>,
+  title: "TypeScript",
+  des: "Statically typed superset of JavaScript that enhances JavaScript by adding optional static typing to the language",
+  link : 'https://www.typescriptlang.org/'
+}
+
 const tailwind = {
   icon: <svg fill="#000000" width="64px" height="64px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>Tailwind CSS icon</title><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"></path></g></svg>,
   title: "TailwindCSS",
@@ -33,6 +40,16 @@ const fontawesome = {
   title: "FontAwesome",
   des: "React is a popular JavaScript library for building user interfaces. Developed and maintained by Facebook.",
   link : "https://fontawesome.com/"
+}
+
+const aws = {
+  icon : <FontAwesomeIcon icon={faFontAwesome} size="2xl"/>,
+  title: "FontAwesome",
+  des: "React is a popular JavaScript library for building user interfaces. Developed and maintained by Facebook.",
+  link : "https://fontawesome.com/"
+
+
+
 }
 
 
@@ -54,8 +71,9 @@ export default function Home() {
                   </div>
               </div>
               <div className="createdusing rounded">
-                <h1 className="border-b border-dashed font-bold text-2xl">Technologies used to build this portfolio</h1>
+                <h1 className="border-b border-dashed font-bold text-2xl mb-4">Technologies used to build this portfolio</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2">
+                  <Technology  data={ts}></Technology>
                   <Technology  data={react}></Technology>
                   <Technology  data={tailwind}></Technology>
                   <Technology  data={next}></Technology>

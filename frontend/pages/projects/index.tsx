@@ -43,7 +43,10 @@ const Project: React.FC = () => {
                       
       </div>
             </div>
-        <div className=''></div>
+        <div className='Other Projects'>
+          
+
+        </div>
         </div>
 
     </div>
