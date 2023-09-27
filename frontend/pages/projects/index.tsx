@@ -34,8 +34,9 @@ const Project: React.FC = () => {
             <div className='title text-cent er'>
                 <h1 className='font-bold text-5xl text-center mt-14 mb-16'>Here are some of the things I've built</h1>
                     <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Projects</h2>
-                    <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="mx-auto max-w-6xl  ">
                       <ProjectItem items={stocksimulator}/>
+                      <div>test</div>
       </div>
             </div>
         

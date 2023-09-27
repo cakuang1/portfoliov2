@@ -45,12 +45,12 @@ export default function Home() {
           <div className='w-3/5 mx-auto'>
               <div className="mb-10">
                   <div className="text-center mt-10">
-                  <h1 className="font-bold text-5xl mb-4 border-b-2 border-purple inline-block ">Welcome to my Portfolio!</h1>
+                  <h1 className="font-bold text-5xl mb-4 border-b-2 border-purple inline-block ">Hey. Im Cary!</h1>
                     <div className="flex justify-center"> <img src="/title.svg" alt="My Icon" /></div>
-                      <p className="text-xl mt-10 font-bold text-purple"> Hey. Im Cary! </p>
+                      <p className="text-xl mt-10 font-bold "> Welcome to my Portfolio! </p>
                       <p className="text-xl mt-2"> </p>
-                      <p className="text-xl mt-2"> Hey! </p>
-                      <p className="text-xl mt-2"> Hey! </p>
+                      <p className="text-xl mt-2"> I am a recent first generation graduate from The University of California Berkeley </p>
+                      <p className="text-xl mt-2">  </p>
                   </div>
               </div>
               <div className="createdusing rounded">

@@ -12,7 +12,7 @@ interface technologyprop {
 const Technology: React.FC<{ data: technologyprop }> = ({ data }) => {
   return (
     <a href={data.link} className="">
-      <div className="p-4 rounded-lg shadow-md hover:bg-blue-300 transition duration-300 ease-in-out">
+      <div className="p-4 rounded-lg shadow-md hover:bg-purple transition duration-300 ease-in-out">
         <div className="text-3xl  flex justify-center">
           {data.icon}
         </div>

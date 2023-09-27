@@ -18,7 +18,8 @@ import Link from "next/link";
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
         <Link href={items.link}>
-      <div className="rounded-lg hover:bg-gray-100 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="rounded-lg hover:bg-gray-100 mt-2 ">
       <div className="text-lg">
         <h3 className="font-bold  text-2xl mb-2 sm:text-3xl ">
           Stock Simulator
@@ -67,6 +68,8 @@ import Link from "next/link";
           </p>
         </div>
       </div>
+    </div>
+    <div className=""></div>
     </div></Link>
     );
   };

@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors : {
-        'purple' : '#6c63ff'
+        'purple' : '#BBF7D0'
 
     },
     },

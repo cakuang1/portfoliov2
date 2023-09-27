@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import 'github-markdown-css/github-markdown.css';
+import remarkGfm from 'remark-gfm';
 
-function MarkdownComponent() {
-  const markdownContent = `
-  ![React Logo](https://reactjs.org/logo-og.png)
 
-  This is an example of an image in Markdown.
-  ![Image 2](/avatar.svg)
-  `;
+interface markdown {
+  markdownContent : string;
+  }
+
+
+
+  const MarkdownComponent: React.FC<markdown> = ({ markdownContent}) => {
 
   return (
-    <div>
-      <ReactMarkdown>{markdownContent}</ReactMarkdown>
+    <div className='markdown-body'>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdownContent}</ReactMarkdown>
     </div>
   );
 }

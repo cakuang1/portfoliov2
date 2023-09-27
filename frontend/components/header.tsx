@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-
+import Link from 'next/link';
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -58,42 +58,42 @@ const Header: React.FC = () => {
         <div className={`md:flex ${isOpen ? 'block' : 'hidden'}`}>
           <ul className="md:flex space-x-4 items-center">
           <li>
-              <a
-                href="about"
+              <Link
+                href="/about"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
                 About
-              </a>
+              </Link>
             </li>
             
             <li>
-              <a
-                href="education"
+              <Link
+                href="/education"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
                 Education
-              </a>
+              </Link>
             </li>
             <li>  
-              <a
-                href="projects"
+              <Link
+                href="/projects"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="contact"
+              <Link
+                href="/contact"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
                 Contact
-              </a>
+              </Link>
             </li>
             <li>
 
           <a
-            href="https://github.com/your-github-username"
+            href="https://github.com/cakuang1"
             target="_blank"
             rel="noopener noreferrer"
             className=''
