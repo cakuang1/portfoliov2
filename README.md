@@ -41,6 +41,10 @@ The Cloud Resume Challenge, inspired by Forrest Brazeal, is a hands-on project t
 
 ## Architecture
 
+![Sample Image](/arch.png)
+
+
+
 
 
 

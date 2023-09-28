@@ -29,8 +29,18 @@ const bookrecc = {
 
 
 const chrome = {
-  image : '/.png',
-  title : "OpenAIBookRecommender",
+  image : '/rabbit.png',
+  title : "ChromeClickTracker",
+  description : "A book recommender web application that allows users to add books to their ",
+  technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
+  languages : ['JavaScript',"Python"],
+  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  link : '/test'
+}
+
+const portfolio = {
+  image : '/rabbit.png',
+  title : "ChromeClickTracker",
   description : "A book recommender web application that allows users to add books to their ",
   technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
   languages : ['JavaScript',"Python"],
