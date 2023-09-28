@@ -21,6 +21,11 @@ jobs:
       - name: Navigate to Frontend Directory
         run: cd frontend
 
+      - name: Debug Current Directory
+        run: |
+          pwd
+          ls -l
+      
       - name: Install Dependencies
         run: npm install
 
