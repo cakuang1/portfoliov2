@@ -1,5 +1,6 @@
 import boto3
 
+
 def lambda_handler(event, context):
     dynamodb = boto3.client('dynamodb')
     table_name = 'ClickCountTable'
