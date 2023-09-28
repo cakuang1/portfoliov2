@@ -39,12 +39,12 @@ const chrome = {
 }
 
 const portfolio = {
-  image : '/rabbit.png',
-  title : "ChromeClickTracker",
-  description : "A book recommender web application that allows users to add books to their ",
-  technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
-  languages : ['JavaScript',"Python"],
-  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  image : '/arch.png',
+  title : "CloudPortfolio",
+  description : "Instead of your typical portfolio resume, I decided to tackle the Cloud Resume Challenge, using cloud computing skills to develop a cloud-hosted resume website",
+  technologies : ["AWS","NextJS"],
+  languages : ['TypeScript',"Python"],
+  functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
   link : '/test'
 }
 
@@ -69,7 +69,7 @@ const Project: React.FC = () => {
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
                       <ProjectItem items={chrome}/>
-                      <ProjectItem items={stocksimulator}/>
+                      <ProjectItem items={portfolio}/>
                       
       </div>
             </div>
