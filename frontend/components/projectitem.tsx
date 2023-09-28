@@ -19,7 +19,7 @@ import Link from "next/link";
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
         <Link href={items.link}>
-          <div className="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg  mt-2 p-2 ease-in-out">
+          <div className="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg  gap-2 mt-2 p-2 ease-in-out">
       <div className=" ">
       <div className="text-lg">
         <h3 className="font-bold  text-2xl mb-2 sm:text-3xl ">
@@ -76,12 +76,12 @@ import Link from "next/link";
         <div className="ml-4">
           <h3 className="font-medium dark:text-white leading-6 text-lg">Frameworks/Other tools</h3>
           <p>
-          {items.languages.join(' · ')}
+          {items.technologies.join(' · ')}
           </p>
         </div>
       </div>
     </div>
-    <div className=""><img src="pipeline.svg" className="w-full h-full"></img></div>
+    <div className="my-auto"><img src={items.image} className=""></img></div>
     </div></Link>
     );
   };

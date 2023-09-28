@@ -20,7 +20,7 @@ const stocksimulator = {
 const bookrecc = {
   image : '/newgateway.png',
   title : "OpenAIBookRecommender",
-  description : "A book recommender web application. However,instead of your typical machine learning algorithm, we used OpenAI's API to recommend books for users instead. This the core of this project consists of a Spring Boot backend and a React Frontend.",
+  description : "A book recommender web application. However,instead of your typical machine learning algorithm, we used OpenAI's API to recommend books for users instead.",
   technologies : ["React","TailwindCSS","OpenAI","SpringBoot","Redis","GoogleBooks API","Docker"],
   languages : ['Java',"Typescript"],
   functionality : ['Users can create their lists of books using a search feature fed from GoogleBooksAPI',"Recomendation engine powered by OpenAI to suggest new books"],
@@ -32,8 +32,8 @@ const chrome = {
   image : '/.png',
   title : "OpenAIBookRecommender",
   description : "A book recommender web application that allows users to add books to their ",
-  technologies : ["React","TailwindCSS","OpenAI","SpringBoot","Docker"],
-  languages : ['Java',"Typescript",""],
+  technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
+  languages : ['JavaScript',"Python"],
   functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
   link : '/test'
 }
@@ -57,8 +57,8 @@ const Project: React.FC = () => {
                     <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Projects</h2>
                     <div className="mx-auto max-w-6xl  ">
                       <ProjectItem items={stocksimulator}/>
-                      <ProjectItem items={stocksimulator}/>
-                      <ProjectItem items={stocksimulator}/>
+                      <ProjectItem items={bookrecc}/>
+                      <ProjectItem items={chrome}/>
                       <ProjectItem items={stocksimulator}/>
                       
       </div>
