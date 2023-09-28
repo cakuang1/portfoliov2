@@ -23,21 +23,14 @@ jobs:
             ls -l
       
       - name: Navigate to Frontend Directory
-        run: cd frontend
+        run: cd frontend/
+      
+
       - name: Debug Current Directory
         run: |
             pwd
-            ls -l
-      
-
-
-      
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Next.js App
-        run: npm run build
-
+            npm install
+            npm run build
       - name: Deploy to S3
         run: |
           aws s3 sync ./out/ s3://carykuang.com
