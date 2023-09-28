@@ -17,14 +17,20 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-
-      - name: Navigate to Frontend Directory
-        run: cd frontend
-
       - name: Debug Current Directory
         run: |
-          pwd
-          ls -l
+            pwd
+            ls -l
+      
+      - name: Navigate to Frontend Directory
+        run: cd frontend
+      - name: Debug Current Directory
+        run: |
+            pwd
+            ls -l
+      
+
+
       
       - name: Install Dependencies
         run: npm install
