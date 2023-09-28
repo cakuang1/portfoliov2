@@ -28,6 +28,7 @@ resource "aws_iam_role" "lambda_exec_role" {
     }]
   })
 }
+data "aws_caller_identity" "current" {}
 
 resource "aws_iam_policy" "lambda_dynamodb_policy" {
   name = "lambda_dynamodb_policy"
@@ -43,13 +44,14 @@ resource "aws_iam_policy" "lambda_dynamodb_policy" {
           "dynamodb:GetItem"
         ],
         Effect = "Allow",
-        Resource = "arn:aws:dynamodb:us-west-1:${aws:account}:table/ClickCountTable"
+        Resource = "arn:aws:dynamodb:us-west-1:${data.aws_caller_identity.current.account_id}:table/ClickCountTable"
       }
     ]
   })
 }
 
 resource "aws_iam_policy_attachment" "lambda_dynamodb_policy" {
+   name       = "lambda_dynamodb_attachment"
   policy_arn = aws_iam_policy.lambda_dynamodb_policy.arn
   roles      = [aws_iam_role.lambda_exec_role.name]
 }
