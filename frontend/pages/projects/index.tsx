@@ -10,13 +10,22 @@ import Layout from '@/components/layout';
 const stocksimulator = {
     image : '/pipeline.svg',
     title : "StockSimulator",
-    description : "A web application that allows you",
-    technologies : ["React","Django","test"],
+    description : "A web applicattion that allows users to simulate buying and selling stocks and build their portfolio.",
+    technologies : ["React","Django","Yahoo Finance"],
     languages : ['Javascript',"Python"],
-    functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfo"],
-    link : '/test'
+    functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+    link : '/p'
 }
 
+const movierecc = {
+  image : '/pipeline.svg',
+  title : "StockSimulator",
+  description : "A web applicattion that allows users to simulate buying and selling stocks and build their portfolio.",
+  technologies : ["React","Django","Yahoo Finance"],
+  languages : ['Javascript',"Python"],
+  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  link : '/test'
+}
 
 
 
