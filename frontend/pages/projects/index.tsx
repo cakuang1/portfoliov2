@@ -14,7 +14,7 @@ const stocksimulator = {
     technologies : ["React","TailwindCSS","Django","Yahoo Finance","Docker"],
     languages : ['Javascript',"Python"],
     functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
-    link : '/p'
+    link : '/projects/stocksimulator'
 }
 
 const bookrecc = {
@@ -24,7 +24,7 @@ const bookrecc = {
   technologies : ["React","TailwindCSS","OpenAI","SpringBoot","Redis","GoogleBooks API","Docker"],
   languages : ['Java',"Typescript"],
   functionality : ['Users can create their lists of books using a search feature fed from GoogleBooksAPI',"Recomendation engine powered by OpenAI to suggest new books"],
-  link : '/test'
+  link : '/projects/bookrecc'
 }
 
 
@@ -44,7 +44,7 @@ const portfolio = {
   description : "Instead of your typical portfolio resume, I decided to tackle the Cloud Resume Challenge, using cloud computing skills to develop a cloud-hosted resume website",
   technologies : ["AWS","NextJS"],
   languages : ['TypeScript',"Python"],
-  functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
   link : '/test'
 }
 
