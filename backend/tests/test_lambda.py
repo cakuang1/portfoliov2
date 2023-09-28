@@ -1,6 +1,7 @@
 import unittest
 import boto3
 import os
+import json
 
 
 class TestLambdaIntegration(unittest.TestCase):
@@ -10,8 +11,8 @@ class TestLambdaIntegration(unittest.TestCase):
         aws_secret_access_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
         # Set up the DynamoDB and Lambda clients using the environment variables
-        self.dynamodb = boto3.client('dynamodb', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
-        self.lambda_client = boto3.client('lambda', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key)
+        self.dynamodb = boto3.client('dynamodb', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key,region_name = 'us-west-1')
+        self.lambda_client = boto3.client('lambda', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key,region_name = 'us-west-1')
         self.table_name = 'ClickCountTable'
 
         # Create a test record in DynamoDB
@@ -19,7 +20,6 @@ class TestLambdaIntegration(unittest.TestCase):
 
 
     def tearDown(self):
-
         self.delete_test_record()
 
     def create_test_record(self):
@@ -40,7 +40,7 @@ class TestLambdaIntegration(unittest.TestCase):
         )
 
     def test_lambda_integration(self):
-        function_name = 'IncrementClickCount'
+        function_name = 'arn:aws:lambda:us-west-1:973111212824:function:IncrementClickCount'
         response = self.lambda_client.invoke(
             FunctionName=function_name,
             InvocationType='RequestResponse',  
@@ -48,7 +48,8 @@ class TestLambdaIntegration(unittest.TestCase):
         )
 
         response_payload = response['Payload'].read().decode()
-        self.assertEqual(response_payload, '"Value updated successfully"')
+        body = json.loads(response_payload)['body']
+        self.assertEqual(body, "Value updated successfully")
         updated_count = self.get_click_count()
         self.assertEqual(updated_count, 11)  
 
