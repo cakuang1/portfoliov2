@@ -1,6 +1,8 @@
 # The Cloud Portfolio
 
-Welcome to my portfolio blog/write up of what I created and how I did it.
+Welcome to my portfolio. As part of the final segment of the Cloud Resume challenge, I have decided to write my 'Blog Post' as a README instead. 
+
+
 
 ## Overview
 
@@ -10,9 +12,7 @@ This portfolio showcases my journey through the Cloud Resume Challenge, a projec
 
 The Cloud Resume Challenge, inspired by Forrest Brazeal, is a hands-on project that combines several aspects of cloud computing, including infrastructure as code (IaC), serverless computing, containerization, and more. It's a fantastic way to dive deep into cloud technologies and create a practical and modern resume.
 
-## What I Accomplished
-
-In this portfolio, you will find:
+## What I Accomplished and Learned
 
 - **Infrastructure as Code (IaC):** I've automated the deployment of my resume website using Terraform. This ensures that I can easily recreate my infrastructure if needed.
 
@@ -24,7 +24,8 @@ In this portfolio, you will find:
 
 - **Cloud Services:** I've utilized various cloud services like AWS S3 for static website hosting, AWS API Gateway for RESTful APIs, and AWS DynamoDB for data storage.
 
-- **Monitoring and Logging:** I've implemented monitoring and logging solutions to ensure the availability and reliability of my application using services like AWS CloudWatch or Azure Monitor.
+
+
 
 
 ## Technologies Used
@@ -37,7 +38,12 @@ In this portfolio, you will find:
 - **Databases:** AWS DynamoDB
 - **Monitoring:** AWS CloudWatch
 
+
 ## Architecture
+
+
+
+
 
 
 
