@@ -19,9 +19,14 @@ jobs:
           node-version: 14
 
       - name: Navigate to Frontend Directory
-        run: cd frontend/
-            npm install
-            npm run build
+        run: |
+            (
+              cd frontend/
+              pwd
+              ls -l
+              npm install
+              npm run build
+            )
 
       - name: Deploy to S3
         run: |
