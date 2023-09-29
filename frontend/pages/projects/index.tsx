@@ -64,7 +64,7 @@ const Project: React.FC = () => {
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Projects</h1>
               </div>
                 <h1 className='font-bold text-5xl text-center mt-14 mb-16'>Here are some of the things I've built</h1>
-                    <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Projects</h2>
+                    <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Personal Projects</h2>
                     <div className="mx-auto max-w-6xl  ">
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
@@ -74,7 +74,7 @@ const Project: React.FC = () => {
       </div>
             </div>
         <div className='Other Projects'>
-          
+        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects</h2>
 
         </div>
         </div>

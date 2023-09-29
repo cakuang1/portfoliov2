@@ -25,8 +25,8 @@ const Education = () => {
 
           </div>
 
-        <div className="flex justify-center">
-        <div className="flex text-md">
+
+      <div className='grid grid-cols-2 gap-4'> 
         <div className="cs font-bold " >
           <h2 className="underline">Computer Science Courses</h2>
           <ul className="">
@@ -39,7 +39,8 @@ const Education = () => {
             <li>Efficient Algorithms and Intractable Problems (CS 170)</li>
             <li>Introduction to Algorithmic Thinking (CS 198)</li>
           </ul>
-          <div className="pt-10"><h1>Math Courses</h1>
+          </div>
+          <div className=""><h1>Math Courses</h1>
         <ul>
           <li>Calculus II (MATH1B)</li>
           <li>Multivariable Calculus (MATH53)</li>
@@ -48,7 +49,6 @@ const Education = () => {
           <li> Theory and Proof based Linear Algebra(INDENG 160)</li>
           </ul>
         </div>
-          </div>
 
         <div className="ds font-bold"> <h2 className="underline">Data Science Courses</h2>
         <ul>
@@ -60,30 +60,34 @@ const Education = () => {
           <li>Human Contexts and Ethics of Data (Data C104)</li>
           <li>Probability for Data Science(DATA 140)</li>
           </ul></div>
-        </div>
-
-        <div className="font-bold pl-6">
-              <h1 >Course Projects</h1>
+          <div className="font-bold ">
+              <h1 className='underline'>Course Projects</h1>
               <ul>
-                <li className="">The Game of Hog (Java)</li>
-                <li>Autocorrected Typing Software (Java)</li>
-                <li>Ants Vs. SomeBees (Java)</li>
-                <li>Double Ended Queue (Java)</li>
-                <li>Gitlet(Java)</li>
-                <li>Build Your own World(Java)</li>
-                <li>Data Transformation(Java)</li>
-                <li>Build Your own World(Java)</li>
-                <li>Traffic Model (Python (Pandas,SKlearn,Feature Engineering))</li>
-                <li>Mongo (Non-Relational Databases(Mongodb),pyMongo,MQL,JSON)</li>
-                <li>Data Transformation(SQL,Interpolation,Entity Resolution)</li>
-                <li>Query Performance (SQL,Query Optimization,Indexes)</li>
-                <li>Mongo (Non-Relational Databases(Mongodb),pyMongo,MQL,JSON)</li>
-                <li>Penguins (Python,NP-Hard,Efficiency)</li>
-                <li>Data 102 Final Project (Casual Inference and Hypothesis testing)(Python,)</li>
-
+                <li className="">The Game of Hog (Java) [CS61A]</li>
+                <li>Ants Vs. Bees (Java) [CS61A]</li>
+                <li>Double Ended Queue (Java)[CS61B]</li>
+                <li>Gitlet(Java)[CS61B]</li>
+                <li>Build Your own World(Java) [CS61B]</li>
+                <li>Traffic Model (Python (Pandas,SKlearn,Feature Engineering)) [DATA100]</li>
+                <li>Data Transformation(SQL,Interpolation,Entity Resolution) [DATA101]</li>
+                <li>Query Performance (SQL,Query Optimization,Indexes) [DATA101]</li>
+                <li>Mongo (Non-Relational Databases(Mongodb),pyMongo,MQL,JSON) [DATA101]</li>
+                <li>ActionMap (Ruby on Rails,Cucumber)[CS169]</li>
+                <li>Penguins (Python,NP-Hard,Efficiency) [CS170]</li>
+                <li>Data 102 Final Project (Casual Inference and Hypothesis testing)(Python) [DATA102]</li>
               </ul>
               <div className="">Code for Course Projects available upon request</div>
             </div>
+        </div>
+        
+          </div>
+
+
+
+
+
+
+
         </div>
 
 
@@ -93,8 +97,8 @@ const Education = () => {
 
 
   
-      </div>
-      </div>
+
+
     </Layout>
   );
 };
