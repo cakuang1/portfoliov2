@@ -16,6 +16,15 @@ const stocksimulator = {
     functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
     link : '/projects/stocksimulator'
 }
+const ActionMap = {
+  image : '/pipeline.svg',
+  title : "StockSimulator",
+  description : "A web application that allows users to simulate buying and selling stocks and build their portfolio.",
+  technologies : ["React","TailwindCSS","Django","Yahoo Finance","Docker"],
+  languages : ['Javascript',"Python"],
+  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  link : '/projects/stocksimulator'
+}
 
 const bookrecc = {
   image : '/newgateway.png',
@@ -48,6 +57,17 @@ const portfolio = {
   link : '/project/cloudresume'
 }
 
+const data102 = {
+  image : '/arch.png',
+  title : "Data 102 Final Project",
+  description : "Research Project aiming to investigate correlation between air pollution and prevalence of respiratory disesases. In order to draw a conclusion, ",
+  technologies : ["AWS","NextJS"],
+  languages : ['TypeScript',"Python"],
+  functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
+  link : '/project/cloudresume'
+}
+
+
 
 
 
@@ -74,10 +94,8 @@ const Project: React.FC = () => {
       </div>
             </div>
         <div className='Other Projects'>
-        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects (Final Write Ups/No) </h2>
+        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects (No Code Provided [Course Policies]) </h2>
         <div className="mx-auto max-w-6xl  ">
-
-                      
       </div>
         </div>
         </div>

@@ -60,7 +60,7 @@ const spring = {
 
 const Django = {
   title : "Django",
-  icon : <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M29.094 1.661a14.595 14.595 0 0 1-1.708 3.031A16.055 16.055 0 0 0 16.042-.001C7.24-.001 0 7.239 0 16.041a16.04 16.04 0 0 0 4.984 11.62l.589.526a16.068 16.068 0 0 0 10.333 3.776c8.37 0 15.401-6.552 16-14.896c.438-4.089-.766-9.255-2.813-15.401zM7.26 27.755a1.353 1.353 0 0 1-1.063.505c-.76 0-1.37-.615-1.375-1.37c0-.755.625-1.375 1.375-1.375c1.151.005 1.792 1.344 1.063 2.24zm21.771-4.802c-3.958 5.271-12.417 3.495-17.833 3.75c0 0-.964.057-1.932.214c0 0 .365-.151.833-.333c3.807-1.323 5.604-1.578 7.917-2.766c4.354-2.214 8.661-7.057 9.557-12.094c-1.661 4.849-6.688 9.01-11.266 10.703c-3.135 1.156-8.802 2.281-8.802 2.281l-.229-.12c-3.859-1.875-3.974-10.229 3.036-12.927c3.068-1.177 6.01-.531 9.323-1.318c3.542-.844 7.641-3.5 9.307-6.964c1.865 5.542 4.109 14.214.089 19.573z"/></svg>
+  icon : <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15.172 0h-4.176v5.932a7.21 7.21 0 0 0-1.816-.2C4.816 5.731 2 8.305 2 12.273c0 4.118 2.655 6.263 7.755 6.268c1.703 0 3.278-.15 5.417-.53V0ZM9.734 8.977c.516 0 .92.05 1.408.2v6.248c-.596.075-.972.1-1.434.1c-2.14 0-3.305-1.142-3.305-3.21c0-2.125 1.22-3.338 3.331-3.338Z" clip-rule="evenodd"/><path fill="currentColor" d="M22 15.233V6.215h-4.17v7.675c0 3.387-.188 4.674-.785 5.786c-.57 1.087-1.462 1.8-3.305 2.606L17.615 24c1.843-.862 2.735-1.643 3.412-2.88c.726-1.288.973-2.782.973-5.887ZM21.584 0H17.41v3.993h4.175V0Z"/></svg>
 
 }
 
@@ -114,7 +114,7 @@ const postgres = {
 
 export default function About() {
   return (
-    <Layout> 
+    <Layout>
           <div className='w-3/5 mx-auto'>
                 <div>
                 <div className="text-center mt-14">
@@ -130,10 +130,12 @@ export default function About() {
                         <p>I'm a curious and driven individual with a passion for design, technology, and learning new things. I am also an avid user of ChatGPT.
                           </p>
                           <h2 className="text-lg font-bold text-purple mt-4">Interests</h2>
-                          <ul>
-                            <li>Creating Software</li>
-                            <li>Learning </li>
-                          </ul>
+                          <ul className="font-bold">
+                <li>&#8226; API Development</li>
+                <li>&#8226; Distributed Systems</li>
+                <li>&#8226; Cloud Native Applications</li>
+                <li>&#8226; Performance Optimization</li>
+              </ul>
                       </div>
                       
               </div>
