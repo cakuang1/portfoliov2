@@ -35,7 +35,7 @@ const chrome = {
   technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
   languages : ['JavaScript',"Python"],
   functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
-  link : '/test'
+  link : '/projects/clicktracker'
 }
 
 const portfolio = {
@@ -45,7 +45,7 @@ const portfolio = {
   technologies : ["AWS","NextJS"],
   languages : ['TypeScript',"Python"],
   functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/test'
+  link : '/project/cloudresume'
 }
 
 
@@ -74,8 +74,11 @@ const Project: React.FC = () => {
       </div>
             </div>
         <div className='Other Projects'>
-        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects</h2>
+        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects (Final Write Ups/No) </h2>
+        <div className="mx-auto max-w-6xl  ">
 
+                      
+      </div>
         </div>
         </div>
 
