@@ -57,15 +57,44 @@ const portfolio = {
   link : '/project/cloudresume'
 }
 
+
+const actionmap = {
+  image : '/arch.png',
+  title : "ActionMap",
+  description : "Worked in a group of 4 to develop a Rails based web application in a two week Agile sprint. Each team member selected a set of user stories and briefed each other during standup meetings.",
+  technologies : ["Rails","Rspec","Cucumber"],
+  languages : ['Ruby'],
+  functionality : ['Allows users to search for US representatives by districts a',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
+  link : ''
+
+}
 const data102 = {
   image : '/arch.png',
   title : "Data 102 Final Project",
-  description : "Research Project aiming to investigate correlation between air pollution and prevalence of respiratory disesases. In order to draw a conclusion, ",
-  technologies : ["AWS","NextJS"],
-  languages : ['TypeScript',"Python"],
-  functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/project/cloudresume'
+  description : "Research Project aiming to investigate correlation between air pollution and prevalence of respiratory disesases. In order to draw a conclusion, we used common Data Science techniques such as EDA,Hypothesis Testing, and Causal Inference.",
+  technologies : ["MatPlotLib","scikit-learn"],
+  languages : ["Python"],
+  functionality : [],
+  link : '/public/data102.pdf'
 }
+
+
+
+
+const data100 = {
+  image : '/arch.png',
+  title : "Traffic Model",
+  description : "Built a traffic model using previous commute data to predict travel times. We used a Multivariate Linear regression model,in which we were able to increase model accuracy over multiple iterations.",
+  technologies : ["MatPlotLib","scikit-learn"],
+  languages : ["Python"],
+  functionality : [],
+  link : '/data100.pdf'
+}
+
+
+
+
+
 
 
 
@@ -94,7 +123,7 @@ const Project: React.FC = () => {
       </div>
             </div>
         <div className='Other Projects'>
-        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects (No Code Provided [Course Policies]) </h2>
+        <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects </h2>
         <div className="mx-auto max-w-6xl  ">
       </div>
         </div>
