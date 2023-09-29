@@ -4,6 +4,7 @@ import { faReact } from "@fortawesome/free-brands-svg-icons/faReact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { ReactNode } from 'react';
 import Technology from "@/components/technologies";
+import Link from "next/link";
 
 
 
@@ -72,7 +73,7 @@ export default function Home() {
                   </div>
               </div>
               <div className="createdusing rounded">
-              <h1 className="font-bold text-2xl mb-2">Technologies used to build this portfolio</h1>
+              <h1 className="font-bold text-2xl mb-2 text-center">Technologies used to build this portfolio</h1>
             <div className="border-b border-dashed mb-4"></div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2">
                   <Technology  data={ts}></Technology>
@@ -84,9 +85,10 @@ export default function Home() {
               </div>
               </div>
               <div className="cloud section mt-6">
-              <h1 className="font-bold text-2xl mb-2">Cloud Resume Challenge</h1>
-              <div className="border-b border-dashed mb-4"></div>
-              <div><p>As part of the Cloud Resume </p></div>
+              <h1 className="font-bold text-xl mb-2 text-center">AWS Architecture</h1>
+              <div><img src="arch.png"></img></div>
+
+              <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it <Link href={'/projects/portfolio'} className="text-purple">here</Link>.</p></div>
               </div>
           </div>
    </Layout>
