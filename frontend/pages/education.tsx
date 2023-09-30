@@ -5,7 +5,7 @@ import Layout from '@/components/layout';
 const Education = () => {
   return (
     <Layout>
- <div className="bg-100 h-screen  text-blue w-3/5 mx-auto">
+ <div className="bg-100   text-blue w-3/5 mx-auto">
  <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Education</h1>
               </div>
