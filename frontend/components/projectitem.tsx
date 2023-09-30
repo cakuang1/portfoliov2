@@ -39,14 +39,15 @@ import Link from "next/link";
           </p>
         </div>
       </div>
-
-      <div className="flex mt-4">
+      {items.functionality.length != 0?  <div className="flex mt-4">
         <div className="flex-shrink-0">
           <div className="flex items-center justify-center h-6">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m5 18l7.68-6L5 6V4h14v2H8.263L16 12l-7.737 6H19v2H5v-2Z"/></svg>
           </div>
         </div>
+
         <div className="ml-4">
+
         <h3 className="font-medium  leading-6 text-lg">Functionality</h3>
         <ul>
                 {items.functionality.map((item, index) => (
@@ -54,7 +55,8 @@ import Link from "next/link";
                     ))}
                 </ul>
         </div>
-      </div>
+      </div> : <div></div>}
+
       <div className="flex mt-4">
         <div className="flex-shrink-0">
           <div className="flex items-center justify-center h-6">

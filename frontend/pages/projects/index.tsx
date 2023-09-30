@@ -69,20 +69,20 @@ const actionmap = {
 
 }
 const data102 = {
-  image : '/arch.png',
+  image : '/data102final.png',
   title : "Data 102 Final Project",
   description : "Research Project aiming to investigate correlation between air pollution and prevalence of respiratory disesases. In order to draw a conclusion, we used common Data Science techniques such as EDA,Hypothesis Testing, and Causal Inference.",
   technologies : ["MatPlotLib","scikit-learn"],
   languages : ["Python"],
   functionality : [],
-  link : '/public/data102.pdf'
+  link : '/data102.pdf'
 }
 
 
 
 
 const data100 = {
-  image : '/arch.png',
+  image : '/data100final.png',
   title : "Traffic Model",
   description : "Built a traffic model using previous commute data to predict travel times. We used a Multivariate Linear regression model,in which we were able to increase model accuracy over multiple iterations.",
   technologies : ["MatPlotLib","scikit-learn"],
@@ -91,14 +91,19 @@ const data100 = {
   link : '/data100.pdf'
 }
 
+const datapipeline = {
+  image : '/data100final.png',
+  title : "Traffic Model",
+  description : "Built a traffic model using previous commute data to predict travel times. We used a Multivariate Linear regression model,in which we were able to increase model accuracy over multiple iterations.",
+  technologies : ["MatPlotLib","scikit-learn"],
+  languages : ["Python"],
+  functionality : [],
+  link : '/data100.pdf'
 
 
 
 
-
-
-
-
+}
 
 
 
@@ -125,6 +130,8 @@ const Project: React.FC = () => {
         <div className='Other Projects'>
         <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects </h2>
         <div className="mx-auto max-w-6xl  ">
+        <ProjectItem items={data100}/>
+        <ProjectItem items={data102}/>
       </div>
         </div>
         </div>
