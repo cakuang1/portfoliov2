@@ -8,7 +8,7 @@ import Layout from '@/components/layout';
 
 
 const stocksimulator = {
-    image : '/pipeline.svg',
+    image : '/stock.png',
     title : "StockSimulator",
     description : "A web application that allows users to simulate buying and selling stocks and build their portfolio.",
     technologies : ["React","TailwindCSS","Django","Yahoo Finance","Docker"],
@@ -16,15 +16,7 @@ const stocksimulator = {
     functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
     link : '/projects/stocksimulator'
 }
-const ActionMap = {
-  image : '/pipeline.svg',
-  title : "StockSimulator",
-  description : "A web application that allows users to simulate buying and selling stocks and build their portfolio.",
-  technologies : ["React","TailwindCSS","Django","Yahoo Finance","Docker"],
-  languages : ['Javascript',"Python"],
-  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
-  link : '/projects/stocksimulator'
-}
+
 
 const bookrecc = {
   image : '/newgateway.png',
@@ -59,13 +51,13 @@ const portfolio = {
 
 
 const actionmap = {
-  image : '/arch.png',
+  image : '/rubyapp.png',
   title : "ActionMap",
   description : "Worked in a group of 4 to develop a Rails based web application in a two week Agile sprint. Each team member selected a set of user stories and briefed each other during standup meetings.",
-  technologies : ["Rails","Rspec","Cucumber"],
+  technologies : ["Rails","Rspec","Cucumber","PostgreSQL"],
   languages : ['Ruby'],
-  functionality : ['Allows users to search for US representatives by districts a',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : ''
+  functionality : ['Allows users to search for US representatives by districts',"Users are able to POST and GET news articles for a specific representative","Search for Campaign Finances for each cycle"],
+  link : 'https://su23-41-35439441bb3f.herokuapp.com/'
 
 }
 const data102 = {
@@ -92,16 +84,13 @@ const data100 = {
 }
 
 const datapipeline = {
-  image : '/data100final.png',
-  title : "Traffic Model",
-  description : "Built a traffic model using previous commute data to predict travel times. We used a Multivariate Linear regression model,in which we were able to increase model accuracy over multiple iterations.",
-  technologies : ["MatPlotLib","scikit-learn"],
+  image : '/pipeline.svg',
+  title : "DDs3tosf",
+  description : "A manual step-by-step data pipeline that extracts data files from s3, transforms the data, and loads them into a snowflake table. Also contains an EDA portion for the data.",
+  technologies : ["AWS S3","Pandas",'SnowFlake',"Docker"],
   languages : ["Python"],
-  functionality : [],
-  link : '/data100.pdf'
-
-
-
+  functionality : ["A batch processing pipeline that pulls data from the "],
+  link : '/projects/pipeline'
 
 }
 
@@ -122,14 +111,17 @@ const Project: React.FC = () => {
                     <div className="mx-auto max-w-6xl  ">
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
-                      <ProjectItem items={chrome}/>
                       <ProjectItem items={portfolio}/>
+                      <ProjectItem items={chrome}/>
+                      <ProjectItem items={datapipeline}/>
+
                       
       </div>
             </div>
         <div className='Other Projects'>
         <h2 className='font bold text-2xl border-b border-dotted mt-4'>Highlighted Course Projects </h2>
         <div className="mx-auto max-w-6xl  ">
+        <ProjectItem items={actionmap}/>
         <ProjectItem items={data100}/>
         <ProjectItem items={data102}/>
       </div>
