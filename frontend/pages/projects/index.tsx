@@ -53,7 +53,7 @@ const portfolio = {
 const actionmap = {
   image : '/rubyapp.png',
   title : "ActionMap",
-  description : "Worked in a group of 4 to develop a Rails based web application in a two week Agile sprint. Each team member selected a set of user stories and briefed each other during standup meetings.",
+  description : "Worked in a group of 4 to develop a Rails based web application in a two week Agile sprint. Each team member selected a set of user stories and briefed each other during standup meetings. Application deployed on heroku.",
   technologies : ["Rails","Rspec","Cucumber","PostgreSQL"],
   languages : ['Ruby'],
   functionality : ['Allows users to search for US representatives by districts',"Users are able to POST and GET news articles for a specific representative","Search for Campaign Finances for each cycle"],
@@ -89,9 +89,8 @@ const datapipeline = {
   description : "A manual step-by-step data pipeline that extracts data files from s3, transforms the data, and loads them into a snowflake table. Also contains an EDA portion for the data.",
   technologies : ["AWS S3","Pandas",'SnowFlake',"Docker"],
   languages : ["Python"],
-  functionality : ["A batch processing pipeline that pulls data from the "],
+  functionality : ["A batch processing pipeline that is created to develop trainable machine learning data","Data follows a pipeline through such that this trainable data is stored into SnowFlake","Contains an EDA portion in an jupyter notebook to visualize a step by step process of the transformation"],
   link : '/projects/pipeline'
-
 }
 
 
