@@ -91,7 +91,7 @@ export default function Home() {
               <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it <Link href={'/projects/portfolio'} className="text-purple">here</Link>.</p></div>
               </div>
               <div className="clicks mt-6">
-              <h1 className="font-bold text-xl mb-2 text-center">AWS Architecture</h1>
+              <h1 className="font-bold text-xl mb-2 text-center"></h1>
               <div><img src="arch.png"></img></div>
 
               <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it <Link href={'/projects/portfolio'} className="text-purple">here</Link>.</p></div>
