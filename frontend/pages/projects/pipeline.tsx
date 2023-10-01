@@ -5,14 +5,14 @@ import MarkdownComponent from "@/components/md"
 export default function Stock() {
 
 
-  const md = `## DoorDash Snowflake pipeline
+  const md = `## 
 
   A manual step-by-step data pipeline that extracts data files from s3, transforms the data, and loads them into a snowflake table. 
   
   
   
   ## Pipeline Flow
-  ![alt text](pipepic.svg)
+  ![alt text](/pipeline.svg)
   
   
   
@@ -118,18 +118,14 @@ export default function Stock() {
   ## Data Source
   
   
-  <b>NOTE</b> I believe this dataset is purely synthetic. I am simply using the data set as a way to work with transactional data. Since I am creating this project for learning purposes, the actual data does not really matter. (Any dataset could work)
-  
-  
-  
-  <b> Tools used:</b>
+  **NOTE:** I believe this dataset is purely synthetic. I am simply using the dataset as a way to work with transactional data. Since I am creating this project for learning purposes, the actual data does not really matter. (Any dataset could work)
+
+  **Tools used:**
   - Python
   - Data lake: [AWS S3](https://aws.amazon.com/s3/)
-  - Data transformation: [Pandas](https://www.getdbt.com/)
-  - Data warehouse: [Snowflake](https://cloud.google.com/bigquery)
-  - Containerization : [Docker](https://www.docker.com/)
-  <b>
-  
+  - Data transformation: [Pandas](https://pandas.pydata.org/)
+  - Data warehouse: [Snowflake](https://www.snowflake.com/)
+  - Containerization: [Docker](https://www.docker.com/)
   
   ## Future work
   
@@ -143,7 +139,9 @@ export default function Stock() {
   return (
     <Layout> 
       <div className="w-3/5 mx-auto">
-        <h1 className="text-center font-bold text-4xl mt-5 ">StockSimulator</h1>
+      <div className="text-center mt-14">
+                <h1 className="font-bold text-4xl inline-block border-b-2 border-purple  ">DDs3toSF</h1>
+              </div>
 <MarkdownComponent markdownContent={md} />
 </div>
 

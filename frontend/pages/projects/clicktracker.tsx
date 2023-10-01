@@ -5,14 +5,16 @@ import MarkdownComponent from "@/components/md"
 export default function Clicktracker() {
 
 
-  const md = `
+  const md1 = `
   #
   
   A Click tracking data pipeline that stores where your clicks are through a chrome extension using RabbitMQ as a broker. Click locations are stored in a postgres database ran in Docker.
   
-  ## Architecture
-  ![Alt Text](/rabbit.png)
+  ## Architecture`
+
   
+
+  const md2 = `
   ## How this Works/File Structure
   
   | Directory/file  | Description |
@@ -57,8 +59,12 @@ export default function Clicktracker() {
   return (
     <Layout> 
       <div className="w-3/5 mx-auto">
-        <h1 className="text-center font-bold text-4xl mt-5">ClickTracker</h1>
-<MarkdownComponent markdownContent={md} />
+      <div className="text-center mt-14">
+                <h1 className="font-bold text-4xl inline-block border-b-2 border-purple  ">ClickTracker</h1>
+              </div>
+        <MarkdownComponent markdownContent={md1} />
+<img src="/rabbit.png" className="w-full"></img>
+<MarkdownComponent markdownContent={md2} />
 </div>
 
 

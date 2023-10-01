@@ -25,17 +25,17 @@ const bookrecc = {
   technologies : ["React","TailwindCSS","OpenAI","SpringBoot","Redis","GoogleBooks API","Docker"],
   languages : ['Java',"Typescript"],
   functionality : ['Users can create their lists of books using a search feature fed from GoogleBooksAPI',"Recomendation engine powered by OpenAI to suggest new books"],
-  link : '/projects/bookrecc'
+  link : '/projects/openai'
 }
 
 
 const chrome = {
   image : '/rabbit.png',
   title : "ChromeClickTracker",
-  description : "A book recommender web application that allows users to add books to their ",
-  technologies : ["Flask","Chrome Extension","RabbitMQ","Docker"],
+  description : "A Click tracking data pipeline that stores where your clicks are through a chrome extension using RabbitMQ as a broker. Click locations are stored in a postgres database ran in Docker. ",
+  technologies : ["Flask","Chrome Extension","RabbitMQ","HeatMapJS","Docker"],
   languages : ['JavaScript',"Python"],
-  functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
+  functionality : ['Uses a Chrome extension to track user clicks',"Coordinates are entered into a RabbitMQ queue and consumed by a python script that stores data into a Postgres databse","Provides a heatmap for users that visualize where your clicks are"],
   link : '/projects/clicktracker'
 }
 
@@ -113,8 +113,6 @@ const Project: React.FC = () => {
                       <ProjectItem items={portfolio}/>
                       <ProjectItem items={chrome}/>
                       <ProjectItem items={datapipeline}/>
-
-                      
       </div>
             </div>
         <div className='Other Projects'>

@@ -5,18 +5,18 @@ import MarkdownComponent from "@/components/md"
 export default function Clicktracker() {
 
 
-  const md = `
+  const md1= `
   
-# OpenAIRecommender
+# 
 
 A book recommender web application. However,instead of your typical machine learning algorithm, we used OpenAI's API to recommend books for users instead. This the core of this project consists of a Spring Boot backend and a React Frontend.
 
-## Architecture/ How this works
-
-![Alt Text](./public/newgateway.png)
-
-
+## Architecture/ How this works'
 I wanted to develop a mini-microservice archictecture with two services. Heres a general overview of the overall architecture.
+`
+
+const md2 = `
+
 
 | Service   | Purpose  |
 |------------|------------|
@@ -76,7 +76,7 @@ These following services will be now running.
 
 
 ## Demo
-![Alt Text](./public/bookrecc.gif)
+![Alt Text](/bookrecc.gif)
 
 
 
@@ -107,8 +107,13 @@ These following services will be now running.
   return (
     <Layout> 
       <div className="w-3/5 mx-auto">
-        <h1 className="text-center font-bold text-4xl mt-5">stocksimulator</h1>
-<MarkdownComponent markdownContent={md} />
+      <div className="text-center mt-14">
+                <h1 className="font-bold text-4xl inline-block border-b-2 border-purple  ">OpenAIRecommender</h1>
+              </div>
+<MarkdownComponent markdownContent={md1} />
+<img src="/newgateway.png" className="w-full"></img>
+<MarkdownComponent markdownContent={md2} />
+
 </div>
 
    </Layout>

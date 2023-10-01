@@ -5,7 +5,7 @@ import MarkdownComponent from "@/components/md"
 export default function Stock() {
 
 
-  const md = `# stocksimulator
+  const md = `# 
 
 
   A quick and easy web application to build your stock portfolio. Search for your favorite stocks and add them to your portfolio through a simple UI. The application will track your portfolio through your browsers storage and allow real time updates to determine how your portfolio is doing using external APIs.
@@ -88,7 +88,9 @@ export default function Stock() {
   return (
     <Layout> 
       <div className="w-3/5 mx-auto">
-        <h1 className="text-center font-bold text-4xl mt-5 ">StockSimulator</h1>
+      <div className="text-center mt-14">
+                <h1 className="font-bold text-4xl inline-block border-b-2 border-purple  ">Stocksimulator</h1>
+              </div>
 <MarkdownComponent markdownContent={md} />
 </div>
 
