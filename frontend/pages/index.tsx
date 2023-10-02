@@ -54,7 +54,7 @@ const aws = {
 
 export default function Home() {
 
-  const [data, setData] = useState(100);
+  const [data, setData] = useState('');
 
   // Function to make a POST request
   const postData = async () => {
