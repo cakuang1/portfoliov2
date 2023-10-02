@@ -62,7 +62,7 @@ resource "aws_iam_policy_attachment" "get_lambda_dynamodb_policy" {
 }
 
 
-resource "aws_lambda_function" "click_count_lambda" {
+resource "aws_lambda_function" "post_click_count_lambda" {
   function_name = "IncrementClickCount"
   runtime      = "python3.8"
   handler      = "lambda_function.lambda_handler"
@@ -84,21 +84,22 @@ resource "aws_lambda_function" "get_click_count_lambda" {
 resource "aws_apigatewayv2_api" "my_api" {
   name          = "MyAPIGateway"
   protocol_type = "HTTP"
-}
-
-
   cors_configuration {
     allow_origins = ["https://carykuang.com"]
     allow_methods = ["GET", "POST"]
     allow_headers = ["*"]
   }
+}
+
+
+
 
 resource "aws_apigatewayv2_integration" "get_lambda_integration" {
   api_id             = aws_apigatewayv2_api.my_api.id
   integration_type   = "AWS_PROXY"
   integration_uri    = aws_lambda_function.get_click_count_lambda.invoke_arn
   integration_method = "POST" # GET method integration
-  integration_timeout_milliseconds = 30000
+  timeout_milliseconds    = 30000
 }
 
 resource "aws_apigatewayv2_integration" "post_lambda_integration" {
@@ -106,7 +107,7 @@ resource "aws_apigatewayv2_integration" "post_lambda_integration" {
   integration_type   = "AWS_PROXY"
   integration_uri    = aws_lambda_function.post_click_count_lambda.invoke_arn
   integration_method = "POST" # POST method integration
-  integration_timeout_milliseconds = 30000
+  timeout_milliseconds    = 30000
 }
 
 resource "aws_apigatewayv2_route" "get_lambda_route" {

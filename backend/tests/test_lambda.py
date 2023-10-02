@@ -3,7 +3,7 @@ import boto3
 import os
 import json
 
-    
+
 class TestLambdaIntegration(unittest.TestCase):
     def setUp(self):
 
@@ -46,7 +46,6 @@ class TestLambdaIntegration(unittest.TestCase):
             InvocationType='RequestResponse',  
  
         )
-
         response_payload = response['Payload'].read().decode()
         body = json.loads(response_payload)['body']
         self.assertEqual(body, "Value updated successfully")

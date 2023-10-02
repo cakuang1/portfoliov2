@@ -2,7 +2,8 @@ import Layout from "@/components/layout"
 import { faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import { faReact } from "@fortawesome/free-brands-svg-icons/faReact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { useEffect,useState } from "react";
 import Technology from "@/components/technologies";
 import Link from "next/link";
 
@@ -49,16 +50,57 @@ const aws = {
   title: "AWS",
   des: "Amazon's cloud computing platform offering  services for building, deploying, and managing applications in the cloud.",
   link : "https://aws.amazon.com/"
-
-
-
 }
 
-
-
-
-
 export default function Home() {
+
+  const [data, setData] = useState(100);
+
+  // Function to make a POST request
+  const postData = async () => {
+    try {
+      const response = await fetch('https://gfcka1y5j4.execute-api.us-west-1.amazonaws.com/prod/clicks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ key: 'your-key', increment: 1 }),
+      });
+      if (response.ok) {
+        console.log('POST request successful');
+      } else {
+        console.error('POST request failed');
+      }
+    } catch (error) {
+      console.error('Error making POST request:', error);
+    }
+  };
+
+  // Function to make a GET request
+  const fetchData = async () => {
+    try {
+      const response = await fetch('/https://gfcka1y5j4.execute-api.us-west-1.amazonaws.com/prod/clicks');
+      if (response.ok) {
+        const result = await response.json();
+        setData(result); // Update the state with fetched data
+      } else {
+        console.error('GET request failed');
+      }
+    } catch (error) {
+      console.error('Error making GET request:', error);
+    }
+  };
+
+  // Call the POST and GET requests when the component mounts
+  useEffect(() => {
+    fetchData();
+    postData();
+
+  }, []); // Empty dependency array means this effect runs once when the component mounts
+
+
+
+
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
@@ -88,13 +130,12 @@ export default function Home() {
               <h1 className="font-bold text-xl mb-2 text-center">AWS Architecture</h1>
               <div><img src="arch.png"></img></div>
 
-              <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it <Link href={'/projects/portfolio'} className="text-purple">here</Link>.</p></div>
+              <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it in my blog <Link href={'/projects/cloudresume'} className="text-purple">here</Link>. Part of the challenge involves displaying a view count for my portfolio.</p></div>
               </div>
-              <div className="clicks mt-6">
-              <h1 className="font-bold text-xl mb-2 text-center"></h1>
-              <div><img src="arch.png"></img></div>
-
-              <div><p className="text-center">I built this portfolio alongside the cloud resume challenge, which helped me create a modern, cloud-hosted website using Amazon Web Services. Learn more about it <Link href={'/projects/portfolio'} className="text-purple">here</Link>.</p></div>
+              <div className="clicks mt-6 text-center">
+              <h1 className="font-bold text-xl mb-2 text-center">Portfolio Views</h1>
+              <div className="font-bold text-5xl">{data}</div>
+              <div><p className="text-center"> </p></div>
 
               </div>
           </div>

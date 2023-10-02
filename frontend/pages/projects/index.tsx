@@ -46,7 +46,7 @@ const portfolio = {
   technologies : ["AWS","NextJS"],
   languages : ['TypeScript',"Python"],
   functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/project/cloudresume'
+  link : '/projects/cloudresume'
 }
 
 
