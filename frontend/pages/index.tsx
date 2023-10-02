@@ -79,7 +79,7 @@ export default function Home() {
   // Function to make a GET request
   const fetchData = async () => {
     try {
-      const response = await fetch('/https://gfcka1y5j4.execute-api.us-west-1.amazonaws.com/prod/clicks');
+      const response = await fetch('https://gfcka1y5j4.execute-api.us-west-1.amazonaws.com/prod/clicks');
       if (response.ok) {
         const result = await response.json();
         setData(result); // Update the state with fetched data

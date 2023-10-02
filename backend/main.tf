@@ -74,11 +74,12 @@ resource "aws_lambda_function" "post_click_count_lambda" {
 resource "aws_lambda_function" "get_click_count_lambda" {
   function_name    = "GetClickCount"
   runtime          = "python3.8"
-  handler          = "getlambda.lambda_handler"
+  handler          = "get_lambda.lambda_handler"
   filename         = "getlambda.zip"
   source_code_hash = filebase64sha256("getlambda.zip") # Corrected source code hash calculation
   role             = aws_iam_role.lambda_exec_role.arn
 }
+
 
 
 resource "aws_apigatewayv2_api" "my_api" {
@@ -90,6 +91,25 @@ resource "aws_apigatewayv2_api" "my_api" {
     allow_headers = ["*"]
   }
 }
+
+resource "aws_lambda_permission" "post_click_count_lambda_api_gw" {
+  statement_id  = "AllowExecutionFromAPIGatewayPost"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.post_click_count_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+  
+  source_arn = "${aws_apigatewayv2_api.my_api.execution_arn}/*/*"  # Adjust the ARN as per your API Gateway configuration
+}
+
+resource "aws_lambda_permission" "get_click_count_lambda_api_gw" {
+  statement_id  = "AllowExecutionFromAPIGatewayGet"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.get_click_count_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+  
+  source_arn = "${aws_apigatewayv2_api.my_api.execution_arn}/prod/GET/clicks"
+}
+
 
 
 
@@ -109,6 +129,8 @@ resource "aws_apigatewayv2_integration" "post_lambda_integration" {
   integration_method = "POST" # POST method integration
   timeout_milliseconds    = 30000
 }
+
+
 
 resource "aws_apigatewayv2_route" "get_lambda_route" {
   api_id    = aws_apigatewayv2_api.my_api.id
