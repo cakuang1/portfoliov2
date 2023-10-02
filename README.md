@@ -66,10 +66,11 @@ I had two options for IAC. AWS SAM or Terraform. I chose the latter, as it is mo
 
 
 ### GitHub Actions (CI/CD)
-Finally, I was able to develop a CI/CD pipeline to test and deploy my code effieciently. Having used Github Actions in the pass, this was all relatively straightforward. Thus, everytime my code is pushed onto the main branch
+Finally, I was able to develop a CI/CD pipeline to test and deploy my code efficiently. Having used Github Actions in the pass, this was all relatively straightforward. Thus, everytime my code is pushed onto the main branch, I would run python integration tests that called the lambda functions locally and determined if my database reflected these changes. As for deployment, I also had a workflow that would would push my new frontend code onto the s3 bucket that was distributing the static files. I think the main challenge here was finding out how to configure the workflow environments so they were able to run the AWS commandlines. 
 
-### My Overall Thoughts on the project
 
+### My Overall Thoughts on the projects
+The challenge provides a hands-on learning experience for participants. It encourages them to build a real-world project using cloud services, which is one of the most effective ways to learn. Participants gain a diverse set of skills during the challenge, including cloud computing, web development, and infrastructure as code (IaC).
 
 
 
