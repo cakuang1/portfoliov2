@@ -82,7 +82,7 @@ export default function Home() {
       const response = await fetch('https://gfcka1y5j4.execute-api.us-west-1.amazonaws.com/prod/clicks');
       if (response.ok) {
         const result = await response.json();
-        setData(result); // Update the state with fetched data
+        setData(result.click_count); // Update the state with fetched data
       } else {
         console.error('GET request failed');
       }
