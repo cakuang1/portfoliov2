@@ -169,7 +169,7 @@ export default function About() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 mt-10">
               <div className=" flex justify-center items-center">
-                  <Image src={'avatar.svg'} alt="" width={250} height={250} />
+                  <Image src={'avatar.png'} alt="" width={250} height={250} />
                 </div>
                       <div>
                         <h2 className=" text-2xl font-bold text-purple">Cary Kuang</h2>   

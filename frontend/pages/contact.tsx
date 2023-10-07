@@ -22,7 +22,7 @@ export default function Contact() {
                     <div className="w-full lg:w-1/2 px-0 sm:px-8">
   <ul className="space-y-6">
     <li className="flex md:-mx-4 ">
-      <Link className="shadow p-1.5 link hover:bg-gray-200" href="">
+      <Link className="shadow p-1.5 link hover:bg-gray-200" href="https://linkedin.com/in/carykuang">
         <div className="px-4 flex items-center gap-2">
         <div><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg></div>
           <h3 className="text-3xl font-semibold">LinkedIn</h3>
@@ -54,12 +54,29 @@ export default function Contact() {
                 <h3 className="text-gray-500 text-lg mt-4 mb-4">Send over an Email, I am quick to respond!</h3>
                 <div className="w-full lg:w-1/2 px-0 sm:px-8">
                       <li className="flex md:-mx-4  ">
-            <Link className="shadow p-1.5 link hover:bg-gray-200" href="">
-              <div className="px-4 flex items-center gap-2">
-                <div><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg></div>
-                                  <h3 className="text-3xl font-semibold">Twitter</h3>
-              </div>
-            </Link>
+
+<div className=" ">
+  <a href="mailto:carykuang1@gmail.com">
+    <div className="px-4 flex items-center gap-2">
+    <div className="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"
+        />
+      </svg>
+    </div>
+    <div> <h3 className="text-3xl font-semibold">Email</h3></div>
+    </div>
+  </a>
+</div>
+
+
     </li>
                 </div>
                 </div>
