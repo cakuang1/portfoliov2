@@ -1,3 +1,7 @@
+
+[![Tests](https://github.com/cakuang1/portfoliov2/actions/workflows/deploynext.yml/badge.svg)](https://github.com/cakuang1/portfoliov2/actions/workflows/deploynext.yml)
+
+
 # The Cloud Portfolio
 
 Welcome to my portfolio. As part of the final segment of the Cloud Resume challenge, I have decided to write my 'Blog Post' as a README instead. 
