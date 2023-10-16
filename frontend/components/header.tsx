@@ -9,16 +9,16 @@ const Header: React.FC = () => {
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <>
     <nav className="border-b">
       <div className="container mx-auto flex justify-between items-center h-20 xl:w-3/5">
         <a href="/">
-          <div className="text-black">
-            <h1 className="text-xl font-bold">Cary Kuang</h1>
-
-          </div>
+        <div className="text-black text-center md:text-left">
+  <h1 className="text-xl font-bold inline-block md:inline text-center md:text-left">
+    Cary Kuang
+  </h1>
+</div>
         </a>
         <div className="md:hidden">
           <button
