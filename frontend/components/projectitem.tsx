@@ -12,10 +12,15 @@ import Link from "next/link";
         link: string;
     }
 
+
+
+
     interface ProjectItem {
         items: ProjectItemProps;
       }
       
+
+  
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
         <Link href={items.link}>

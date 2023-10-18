@@ -1,0 +1,7 @@
+SLAs and SLOs
+
+What are they. They are often contracts that define the expected performance and availability of a service.
+
+head of line blocking, few number of slow requests that hold up the others.
+Elastic services, autommatically detect increased loads and scale appropriately
+An ac

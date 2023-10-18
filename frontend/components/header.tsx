@@ -57,6 +57,14 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link
+                href="/blog"
+                className="hover:text-gray-400 transition duration-300 ease-in-out"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/contact"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
@@ -96,6 +104,11 @@ const Header: React.FC = () => {
         <li>
           <Link href="/projects" className="hover:text-gray-400 transition duration-300 ease-in-out">
             Projects
+          </Link>
+        </li>
+        <li>
+          <Link href="/blog" className="hover:text-gray-400 transition duration-300 ease-in-out">
+            Blog
           </Link>
         </li>
         <li>
