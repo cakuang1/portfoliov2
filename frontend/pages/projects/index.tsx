@@ -43,10 +43,11 @@ const portfolio = {
   image : '/arch.png',
   title : "CloudPortfolio",
   description : "Instead of your typical portfolio resume, I decided to tackle the Cloud Resume Challenge, using cloud computing skills to develop a cloud-hosted resume website",
-  technologies : ["AWS","NextJS"],
+  technologies : ["AWS","NextJS","TailwindCSS"],
   languages : ['TypeScript',"Python"],
   functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/projects/cloudresume'
+  link : '/projects/cloudresume',
+  deployed : true
 }
 
 
@@ -94,13 +95,14 @@ const datapipeline = {
 }
 
 const punapi = {
-  image : '/pipeline.svg',
-  title : "DDs3tosf",
-  description : "A manual step-by-step data pipeline that extracts data files from s3, transforms the data, and loads them into a snowflake table. Also contains an EDA portion for the data.",
-  technologies : ["AWS S3","Pandas",'SnowFlake',"Docker"],
-  languages : ["Python"],
-  functionality : ["A batch processing pipeline that is created to develop trainable machine learning data","Data follows a pipeline through such that this trainable data is stored into SnowFlake","Contains an EDA portion in an jupyter notebook to visualize a step by step process of the transformation"],
-  link : '/projects/pipeline'
+  image : '/punapi.png',
+  title : "punapi.rest",
+  description : "A fun free to use REST API so you can develop your apps using puns and pun based memes! Currently deployed on Vercel.",
+  technologies : ["NextJS","Prisma",'PostgreSQL',"NodeJS","TailwindCSS","Edge/Serverless Functions","QueryCaching","Vercel Blob Storage"],
+  languages : ["Typescript"],
+  functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",""],
+  link : 'https://www.punapi.rest/',
+  deployed: true
 }
 
 
@@ -117,12 +119,22 @@ const Project: React.FC = () => {
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Projects</h1>
               </div>
                 <h1 className='font-bold text-5xl text-center mt-14 mb-16'>Here are some of the things I've built</h1>
+                <div className=" items-center text-center">
+                    <span className="w-2 h-2 inline-block bg-green-100 mr-2"></span>
+                    <span className="text-gray-700 ">Deployed Project</span>
+                  </div>
                     <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Personal Projects</h2>
+                    
                     <div className="mx-auto max-w-6xl  ">
-                    <ProjectItem items={stocksimulator}/>
+
+
+                        <ProjectItem items={punapi} />
+                    <ProjectItem items={portfolio}/>
+
+
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
-                      <ProjectItem items={portfolio}/>
+
                       <ProjectItem items={chrome}/>
                       <ProjectItem items={datapipeline}/>
       </div>

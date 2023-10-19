@@ -10,6 +10,7 @@ import Link from "next/link";
         technologies :string[];
         functionality : string[];
         link: string;
+        deployed?: boolean;
     }
 
 
@@ -24,7 +25,11 @@ import Link from "next/link";
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
         <Link href={items.link}>
-          <div className="grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg  gap-2 mt-2 p-2 ease-in-out">
+     <div
+  className={`grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg gap-2 mt-2 p-2 ease-in-out ${
+    items.deployed ? 'bg-green-100' : ''
+  }`}
+>
       <div className=" ">
       <div className="text-lg">
         <h3 className="font-bold  text-2xl mb-2 sm:text-3xl ">
