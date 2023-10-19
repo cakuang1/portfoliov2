@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
@@ -16,9 +15,9 @@ const Header: React.FC = () => {
         <a href="/">
         <div className="text-black text-center md:text-left">
   <h1 className="text-xl font-bold inline-block md:inline text-center md:text-left">
-    Cary Kuang
-  </h1>
-</div>
+      Cary Kuang
+    </h1>
+  </div>
         </a>
         <div className="md:hidden">
           <button

@@ -93,6 +93,17 @@ const datapipeline = {
   link : '/projects/pipeline'
 }
 
+const punapi = {
+  image : '/pipeline.svg',
+  title : "DDs3tosf",
+  description : "A manual step-by-step data pipeline that extracts data files from s3, transforms the data, and loads them into a snowflake table. Also contains an EDA portion for the data.",
+  technologies : ["AWS S3","Pandas",'SnowFlake',"Docker"],
+  languages : ["Python"],
+  functionality : ["A batch processing pipeline that is created to develop trainable machine learning data","Data follows a pipeline through such that this trainable data is stored into SnowFlake","Contains an EDA portion in an jupyter notebook to visualize a step by step process of the transformation"],
+  link : '/projects/pipeline'
+}
+
+
 
 
 const Project: React.FC = () => {
@@ -108,6 +119,7 @@ const Project: React.FC = () => {
                 <h1 className='font-bold text-5xl text-center mt-14 mb-16'>Here are some of the things I've built</h1>
                     <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Personal Projects</h2>
                     <div className="mx-auto max-w-6xl  ">
+                    <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
                       <ProjectItem items={portfolio}/>

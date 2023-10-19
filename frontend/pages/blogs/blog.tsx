@@ -11,7 +11,6 @@ export default function Blog() {
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Blog</h1>
                 <h1 className="text-2xl text-center mt-8"> I enjoy writing about what I learn!</h1>
                 <div>
-
                     
                 </div>
 
