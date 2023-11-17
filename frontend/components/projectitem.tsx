@@ -20,11 +20,9 @@ import Link from "next/link";
         items: ProjectItemProps;
       }
       
-
-  
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     return (
-        <Link href={items.link}>
+        <Link href={items.link} target="_blank" rel="noopener noreferrer" >
      <div
   className={`grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg gap-2 mt-2 p-2 ease-in-out ${
     items.deployed ? 'bg-green-100' : ''

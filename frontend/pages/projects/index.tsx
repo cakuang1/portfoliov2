@@ -100,11 +100,36 @@ const punapi = {
   description : "A fun free to use REST API so you can develop your apps using puns and pun based memes! Currently deployed on Vercel.",
   technologies : ["NextJS","Prisma",'PostgreSQL',"NodeJS","TailwindCSS","Edge/Serverless Functions","QueryCaching","Vercel Blob Storage"],
   languages : ["Typescript"],
-  functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",""],
+  functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",],
   link : 'https://www.punapi.rest/',
   deployed: true
 }
 
+
+const leettracker = {
+  image : '/leetcode.png',
+  title : "LeetTracker",
+  description : "LeetTracker is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
+  technologies : ["NextJS","Express",'PostgreSQL(Neon)',"Prisma","TailwindCSS","Neon","Serverless Functions","OAuth"],
+  languages : ["Typescript","SQL"],
+  functionality : ["Users can add questions ","Deployed edge functions and cached endpoints for optimization",],
+  link : 'https://www.leetcodetracker.codes/',
+  deployed: true
+}
+
+
+
+
+const leaflet = {
+  image : '/leetcode.png',
+  title : "LeetTracker",
+  description : "LeetTracker is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
+  technologies : ["NextJS","Express",'PostgreSQL(Neon)',"Prisma","TailwindCSS","Neon","Serverless Functions"],
+  languages : ["Typescript,Java"],
+  functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",],
+  link : 'https://www.leetcodetracker.codes/',
+  deployed: true
+}
 
 
 
@@ -113,28 +138,23 @@ const Project: React.FC = () => {
     <Layout>
     <div className="project">
         <div className='w-3/5 mx-auto'>
-
             <div className='title '>
             <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Projects</h1>
               </div>
-                <h1 className='font-bold text-5xl text-center mt-14 mb-16'>Here are some of the things I've built</h1>
-                <div className=" items-center text-center">
-                    <span className="w-2 h-2 inline-block bg-green-100 mr-2"></span>
-                    <span className="text-gray-700 ">Deployed Project</span>
+                <h1 className='font-bold text-5xl text-center mt-14 mb-8'>Here are some of the things I've built</h1>
+                <div className=" items-center text-center flex justify-center">
+                    <div className="w-4 h-4 flex bg-green-100 mr-2"></div>
+                    <div className="text-gray-700 ">Deployed Project</div>
                   </div>
                     <h2 className='font bold text-2xl border-b border-dotted'>Highlighted Personal Projects</h2>
-                    
+                  
                     <div className="mx-auto max-w-6xl  ">
-
-
+                    <ProjectItem items={leettracker} />
                         <ProjectItem items={punapi} />
-                    <ProjectItem items={portfolio}/>
-
-
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
-
+                      <ProjectItem items={portfolio}/>
                       <ProjectItem items={chrome}/>
                       <ProjectItem items={datapipeline}/>
       </div>
