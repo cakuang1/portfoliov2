@@ -72,8 +72,6 @@ const data102 = {
 }
 
 
-
-
 const data100 = {
   image : '/data100final.png',
   title : "Traffic Model",
@@ -106,30 +104,30 @@ const punapi = {
 }
 
 
+
 const leettracker = {
   image : '/leetcode.png',
   title : "LeetTracker",
   description : "LeetTracker is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
   technologies : ["NextJS","Express",'PostgreSQL(Neon)',"Prisma","TailwindCSS","Neon","Serverless Functions","OAuth"],
   languages : ["Typescript","SQL"],
-  functionality : ["Users can add questions ","Deployed edge functions and cached endpoints for optimization",],
+  functionality : ["Users can Schedule and edit problems in a Kanban view","Graph UI to visualize progress","Plan Tracking for NeetCode's Blind 75 and Neetcode 150"],
   link : 'https://www.leetcodetracker.codes/',
   deployed: true
 }
 
 
-
-
-const leaflet = {
-  image : '/leetcode.png',
-  title : "LeetTracker",
-  description : "LeetTracker is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
-  technologies : ["NextJS","Express",'PostgreSQL(Neon)',"Prisma","TailwindCSS","Neon","Serverless Functions"],
+const remotesf = {
+  image : '/remotesf.png',
+  title : "RemoteSF",
+  description : "Database of remote work places in SF,displayed using an OSM ",
+  technologies : ["React","Spring/SpringBoot",'MongoDB(Atlas)',"React Leaflet","TailwindCSS"],
   languages : ["Typescript,Java"],
-  functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",],
-  link : 'https://www.leetcodetracker.codes/',
+  functionality : ["Map UI created using OSM(Open Source Map) and Leaflet where users to click to query nearby remote work places"],
+  link : '',
   deployed: true
 }
+
 
 
 
@@ -142,7 +140,7 @@ const Project: React.FC = () => {
             <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Projects</h1>
               </div>
-                <h1 className='font-bold text-5xl text-center mt-14 mb-8'>Here are some of the things I've built</h1>
+                <h1 className='font-bold text-4xl text-center mt-10 mb-8'>Here are some of the things I've built</h1>
                 <div className=" items-center text-center flex justify-center">
                     <div className="w-4 h-4 flex bg-green-100 mr-2"></div>
                     <div className="text-gray-700 ">Deployed Project</div>
@@ -154,6 +152,7 @@ const Project: React.FC = () => {
                         <ProjectItem items={punapi} />
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
+                      <ProjectItem items={remotesf}/> 
                       <ProjectItem items={portfolio}/>
                       <ProjectItem items={chrome}/>
                       <ProjectItem items={datapipeline}/>
