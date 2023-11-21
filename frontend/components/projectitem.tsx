@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 
-
     interface ProjectItemProps {
         image :string;
         title: string;
@@ -12,17 +11,17 @@ import Link from "next/link";
         link: string;
         deployed?: boolean;
     }
-
-
-
-
     interface ProjectItem {
         items: ProjectItemProps;
       }
       
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
+    const linkProps = items.deployed
+    ? { href: items.link, target: "_blank", rel: "noopener noreferrer" }
+    : { href: items.link };
+
     return (
-        <Link href={items.link} target="_blank" rel="noopener noreferrer" >
+        <Link {...linkProps} >
      <div
   className={`grid grid-cols-1 md:grid-cols-2 hover:bg-gray-100 transition duration-200 rounded-lg gap-2 mt-2 p-2 ease-in-out ${
     items.deployed ? 'bg-green-100' : ''
@@ -96,8 +95,5 @@ import Link from "next/link";
     );
   };
   
-
-
-
   export default ProjectItem;
   

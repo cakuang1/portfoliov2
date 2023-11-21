@@ -17,7 +17,6 @@ const stocksimulator = {
     link : '/projects/stocksimulator'
 }
 
-
 const bookrecc = {
   image : '/newgateway.png',
   title : "OpenAIBookRecommender",
@@ -58,7 +57,8 @@ const actionmap = {
   technologies : ["Rails","Rspec","Cucumber","PostgreSQL"],
   languages : ['Ruby'],
   functionality : ['Allows users to search for US representatives by districts',"Users are able to POST and GET news articles for a specific representative","Search for Campaign Finances for each cycle"],
-  link : 'https://su23-41-35439441bb3f.herokuapp.com/'
+  link : 'https://su23-41-35439441bb3f.herokuapp.com/',
+  deployed : true
 
 }
 const data102 = {
