@@ -1,5 +1,24 @@
 import Layout from "@/components/layout"
 
+
+interface Blogprops {
+  title :string,
+  description :string,
+  image:string,
+  link : string
+}
+
+
+const databaseinternals = {
+  title: "DataBase Internals",
+  description: "Understanding concepts behind modern database and storage engine internals",
+  image: "blogimages/ddia.jpeg",
+  link:"ddia"
+}
+
+
+
+
 export default function Blog() {
   return (
     <Layout> 
@@ -14,3 +33,6 @@ export default function Blog() {
    </Layout>
   )
 }
+
+
+
