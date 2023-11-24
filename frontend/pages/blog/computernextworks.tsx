@@ -185,8 +185,69 @@ INTERVIEWS"/>
     <Bullet bullets={["Strong consistency : Any read operation returns a value corresponding to the most recent write data item. Clients never sees out of date data",
 "Weak Consistency : Subsequent read operations may not see the most updated value", "Eventual Consistency : Form of weak consistency, Given enough time, all updates are propagated" ,"Strong consistency is typically not ideal as availablity is severly lowered. An enventual consistent model is highly adopted and what we will use"]}/>
         <p>Inconsistency resolution: versioning</p>
-        <Bullet bullets={["Replication gives high availabilty but causes inconsistencies among replicas", "Vector clocks are [server,version] pair associated with a data item. Example D([S1,v1],[S2,v2])"]}/>
+        <Bullet bullets={["Replication gives high availabilty but causes inconsistencies among replicas", "Vector clocks are [server,version] pair associated with a data item. Example D([S1,v1],[S2,v2])."]}/>
+        <Subheader title="Handling failures"/>
+        <p>It is insufficient to believe a server is down  becauese another server says so. Requires atleast two independent sources.</p>
+        <p>Decentralized failure detection models like a gossip protocol. Heres how it works</p>
+        <Bullet bullets={["Each node maintains a node membership list, which contains member IDs and heartbeat counters",
+    "Each node periodically sends heartbeats to a set of random nodes, which in turn propogates to multiple other nodes",
+    "Membership lists are updated to the latest info", "Membership lists have not been updated for a certain period of time, considered offline"]}/>
+    <Subheader title="System architecture diagram"/>
+    <p> Clients communicate with a simple API using a simple API, such as get and put</p>
+    <p>Coordinator is a node that acts as a proxy between the client and the key value store</p>
+    <p>Data is replicated at multiple nodes</p>
+    <Subheader title="Write path"/>
+    <Bullet bullets={["The write request is persisted on a commit log file", "Data is saved in the memory cache", "When the cache is full or reaches a predefined threshold, the data is flushed"]}/>
+    <Subheader title="Read Path"/>
+    <Bullet bullets={["The system first checks if the data is in memory", "Not in memory ? Checks the bloom filter. This helps determine which SSTable the key might be in", "Then the data is returned to the client"]}/>
+    <Chapter title="CHAPTER 7: DESIGN A UNIQUE ID GENERATOR IN DISTRIBUTED SYSTEMS"/>
+    <Subheader title="Step 1 - Understand the problem and establish design scope"/>
+    <Bullet bullets={["IDs must be unique, IDs are numerical values only","IDs fit into 64 bits","IDs are ordered by date",  "Ability to generate 10000 unique IDs per second"]}/>
+    <Subheader title="Step 2 - Propose high-level design and get buy-in"/>
+    <p>Multi-master replication</p>
+    <Bullet bullets={["Auto increment feature of databases. This can work and is ideal with single server databases, but generally is difficult to scale in a distributed env"]}/>
+    <p>UUID</p>
+    <Bullet bullets={["Extremelly low probability to get collisions", "Simple, no coordination between servers", "Easy to scale, web servers create their own UUID"]}/>
+    <p>Ticket servers</p>
+    <Bullet bullets={["Centralized auto-increments, hosted on a seperate server", "Each time a server requests for an ID, it connects with this server"]}/>
+    <p>Twitter snowflake approach</p>
+    <Bullet bullets={["Main idea here is that instead of generating an ID directly,we divide ID into different sections", "64 bit ID, consisiting of 5 sections", "Sign bit - 1 bit",  
+ "TimeStamp : 41 bits", "Datacenter ID : 5 bits","Machine ID : 5 Bits", "Sequence number : For every ID generated on a machine, the sequence number is incremented by 1" ]}/>
+    <Chapter title="CHAPTER 8: DESIGN A URL SHORTENER"/>
+    <Subheader title="Step 1 - Understand the problem and establish design scope"/>
+    <p>Basic use case is</p>
+    <Bullet bullets={["1.URL shortening: given a long URL => return a much shorter URL","2.URL redirecting: given a shorter URL => redirect to the original URL","3.High availability, scalability, and fault tolerance considerations"]}/>
+    <Subheader title="Step 2 - Propose high-level design and get buy-in"/>
+    <p>API Endpoints to communicate between clients and servers</p>
+    <p>1 : URL shortening : POST request to send over a link to the database, with the request parameter being the long URL, user retrieves the shortened URL</p>
+    <p>2 : URL Redirecting : To redirect the short URL to the long URL, the user sends a GET request using that same URL, which returns the longURL in the form of redirection</p>
+    <p>301 redirection vs 302 redirections</p>
+    <p>301: Requested URL is permanently moved to the long URL. Browser caches the response, and subsequent reqeusts for the same URL will not be sent to the server. Good for reducing the load on the servers.</p>
+    <p>302: URL is temporarily moved to the long URL, thus subsequent requests for the same URL will be sent to the service. Good for analytics</p>
+    <p>We also need to consider a Hash Function, such that the url must be hashed to one hashvalue, and each hashvalue can be mapped back to the longURL</p>
+    <Subheader title="Step 3 - Design deep dive"/>
+    <p>Hash + Collision resolution</p>
+    <p>Different Hashing functions include CRC52,MD5,SHA-1. However, all of these produce more than the number of characters we need. How do we make it shorter?</p>
+    <Bullet bullets={["First approach : Collect the first 7 characters of the hash, however this can lead to hash collisions", "Rehashing the original URL + predefined string if the hashed value is in our database. This is expensive, as database checking takes a while"]}/>
+    <p>Base 62 Conversion</p>
+    <p>This simply involves converting the unique ID associated with the LongURL to Base62</p>
+    <Subheader title="URL shortening deep dive"/>
+    <p>Here is the flow of a POST request</p>
+    <Bullet bullets={["1. LongURL as the request parameter", "2. System checks if the longURL is in the database", "3. If it is in the database, then return the shortURL", "4.If not, longURl is new, and a new unique ID is generated by the ID generator","5.Convert the ID to shortURl with the base62 conversion", "Create a new database row"]}/>
+    <Subheader title="URL redirecting deep dive"/>
+    <p>Here is a flow of the GET request</p>
+    <Bullet bullets={[
+        "1. User clicks on the shortened URL",
+        "2 .The load balancer forwards the request to the webserver",
+        "3. If a shortURL is already in the cache, return longURL directly",
+        "4. If a shortURL is not in thecache,fetch the long URL from the database. If not in the database, user tried to get an invalid shortURL",
+        "5. The longURl is returned to the user"
+    ]}/>        
 
+    <Chapter title="CHAPTER 9: DESIGN A WEB CRAWLER"/>
+    <p>Web crawler is a robot or spider, which is used by search engines to discover new or updated content on the web.</p>
+    <Bullet bullets={[""]}/>
+        
                     </div>
             </div>
    </Layout>
