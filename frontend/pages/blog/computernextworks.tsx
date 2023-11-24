@@ -57,7 +57,137 @@ export default function Databaseinternals() {
             <Subheader title="Database scaling"/>
             <p>Vertical Scaling : Increasing CPU,RAM etc. Hardware limits and greater risks in points of failure.</p>
             <p> Horizontal Scaling : Also called sharding. Data stored on each shard is unique. Hash functions are used to determine which shard the query needs to look in.</p>
-            </div>
+            <p> What is sharding?  Sharding seperates a large database into smaller more managed parts called shards. These shards contain subsets of the larger database and are typically mutually exclusive. Here are a few considerations : </p>
+            <Bullet bullets={["Choice of sharding key. Consists of one or more fields in a table. A hashing function is typically applied,and the value maps to a shard. Choosing an important sharding key is important for even distribution of data",
+        "Resharding data: Occurs when a single shard can no longer hold data or certain shards experience shard exhaustion. This is fixed using consistent hashing.","Celebrity Problem : Shard is overwhelmed/Certain shards are outliers. Thus, we should allocate seperate shards for those who have a large number of read operations",
+        "Join and Denormalize : Join operations are hard once the database has been sharded. We must denormalize the database so queries are perfomed in a single table"]}/>
+            <Subheader title="Millions of users and beyond"/>
+            <p>Key ideas for scaling your  application</p>
+            <Bullet  bullets={["Keep web tiers stateless" ,  "Build Redundancy at every tier" ,  "Cache data as much as you can" , "Support multiple data centers", "Host Static assets in CDN" , "Scale your data tier by sharding",
+            "Split tiers into individual services" , "Monitor your system and use automation tools"]}
+            ></Bullet>
+            <Chapter title="CHAPTER 2: BACK-OF-THE-ENVELOPE ESTIMATION"/>
+            Read if you want quick overview of esimations, will not go over it here
+            <Chapter title="CHAPTER 3: A FRAMEWORK FOR SYSTEM DESIGN
+
+INTERVIEWS"/>
+
+        <Subheader title="A 4-step process for effective system design interview"/>
+        <p>Step 1 : Understand the problem and establish design scope</p>
+        <Bullet bullets={["Ask the right questions, make the proper assumptions, and gather information", "Ask questions about what features are we planning to build? Users ? How fast does the company anticipate scale up ? Technology stack?"]}/>
+        <p>Step 2 : Propose high level design and get buy-in</p>
+        <Bullet bullets={["Come up with initial blue print for design", "Draw box diagrams on board (Clients,APIS,webservers,data stores,cache,CDN,message queues)", "Do back of the envelope calculations to evauluate if your blueprint fits the constraints"]}/>
+        <p>Step 3 : Design deep dive</p>
+        <Bullet bullets={["Identify and prioritize components","Some examples might be focusing on the bottlenecks and resource estimations, where the interviewer likes focusing on high-level design"]}/>
+        <p>Step 4 : Wrap Up</p>
+        <p>Interviewer might ask follow-up questions or give you the freedom to discuss final points</p>
+        
+        <Subheader title="Dos and Donts"/>
+        <p>Dos</p>
+        <Bullet bullets={["Ask for clarification", "Understand the requirments " , "Communicate with recruiter",  "Suggest multiple approaches if possible", "Once you agree with your interviewer on the blueprint, go into details on each component. Design the most crtitical components first",  "Bounce ideas to interviewer"]}/>
+        <p>Don'ts</p>
+        <Bullet bullets={["Be unprepared for typicail interview questions", "Dont jump into a solution without clarifying requirements and assumptions", "Ask for feedback often", "You are not done until your inteviewer says your done"]}/>
+        <Chapter title="CHAPTER 4: DESIGN A RATE LIMITER"/>
+        <p> What is a rate limiter ? </p>
+        <p>A rate limiter limits the number of client requests allowed to be sent over a period of time.</p>
+        <Subheader title="Step 1 - Understand the problem and establish design scope"/>
+        <p> Requirements</p>
+        <Bullet bullets={["Accurate", "Low latency, Should not slow down HTTP response time","Use as little memory as possible", "Distributed rate limiting, Shared across multiple servers", "Exception handling,user should be notified if their requests have been throttled"," High fault tolerance,what happends if the rate limiter goes offline,it should not affect the entire system"]}/>
+        <Subheader title="Step 2 - Propose high-level design and get buy-in"/>
+        <p>Where should you put the rate limiter?</p>
+        <p>Client side is a bad idea.Easily forged and manipulated by malacious actors</p>
+        <p>Server side implementation is better</p>
+        <p>Alternative way, creating a api rate limiter middleware, which throttles requests before it reaches API servers. Cloud microservices typically offer this within a component called an API gateway. An API gateway can provide more than just rate limiting, but for now we only going to be talking about rate limiting.</p>
+        <p>No absolute answers, but here is a general guidelines from the book</p>
+        <Bullet bullets={["Evaluate current technology stack . If you choose to implement rate limiting server-side, make sure your programming language is efficient in do so"
+        ,"Choose a rate limiting algorithm that fits your business needs",
+        "Using a microservice architecture using an API gateway? Simply add on the rate limiter",
+        "Rate limiters generally take a while to build. If not enough engineering resources, mayby opt for a commerical API gateway that provides built-in rate limiting capabilities"
+        ]}/>
+        <p>Here are a few of the algorithms used to create rate limiters</p>
+        <p>Token Button algorithm</p>
+        <p>Amazon and Stripe use this according to the book</p>
+        <Bullet bullets={["Token Bucket has a predefined capacity. Tokens are put into the bucket at preset rates periodically. Once bucket is full, extra tokens overflow. The two parameters for this algorithm is the bucket size and refill rate",
+        " Each Request consumes one token","If no tokens, the request gets dropped"]}/>
+        <p>How would you use this algorithm in your system?</p>
+        <Bullet bullets={["Bucket for each API endpoint if you want to rate-limit b","Throttle based on IP? Each IP address would need a bucket",  "Global bucket if entire system needs to be rate-limited"]}/>
+        <Subheader title="Leaking Bucket Algorithm"/>
+        <p>Similar to the token bucket,except requests are processed at a fixed rate</p>
+        <Bullet bullets={["FIFO queue data structure that we called a leaking bucket","Bucket has fixed capacity and requests fill the queue" , "Requests leave the queue at a fixed rate determined by developer"]}/>   
+        <Subheader title="Fixed window counter algorithm"/>
+        <p>Divides timeline into fized time windows, assigning a counter for each window. Once counter exceeds pre-defined threshhold, requests are dropped </p>
+        <Subheader title="Sliding window log algorithm"/>
+        <p>Fixes the problem with edges of fixed time windows</p>
+        <Bullet bullets={["Algorithm keeps track of timestamps, stored in a cache", "When a new request comes in, remove outdated time stamps, which are those that are older than the current time window", "Add the time stamp to the current request", "If log size is the same or lower than the allowed count, the the request goes through, else its dropped"]}/>
+        <Subheader title="High-level architecture"/>
+        <p>Algorithms are simple and easy to implement. But where should we store counters?</p>
+        <p>A database is not a good idea, as disk reponses are very slow. An in-memory cache is a much better idea.</p>
+        <Bullet bullets={["Something like redis is good here","Client sends a request","Middleware fetches counter, if the limit is reached, request rejected,else counter is incremented and saved in redis"]}/>
+        <Subheader title="Step 3 - Design deep dive"/>
+        <p>Rate limiting rules are written in confguration files. They determine the </p>     
+        <p>Client exceeds limit and is being throttled? How do you respond? Http response headers returned to the client</p>
+        <Bullet bullets={["X-Ratelimit-Remaining: The remaining number of allowed requests within the window." , "X-Ratelimit-Limit: It indicates how many calls the client can make per time window", 
+        "X-Ratelimit-Retry-After: The number of seconds to wait until you can make a request again without being throttled."]}/>
+        <p>Scaling a rate-limiter using a distributed enviornment. We need to scale the system to support multiple servers and conccurent threads.There are mainly two issues here. Race conditions and synchronization issues. How do we solve these issues?</p>
+        <p>Locks can work, but significantly slow things down. The book describes two common approaches. Lua scripts and the sorted sets data structure in redis.</p>
+        <p>For synchronization issues, one can use sticky sessions. If you have multiple rate limiters, clients will stick to one rate-limiter. This is not scalable so its not recommended. A better fix would be to use centralized data stores like redis</p>
+        <p>Performance optimization : Multi-data center setup is crucial here. Latency is high for users further away. Synchronize data with an eventual consistency model.</p>
+        <p>Monitoring : Once the rate limiter is put into place, it is important to check if the rate limiter is effective. That is, the algorthm chosen is effective, and the limiting rules are effective</p>
+        <Subheader title="Step 4 - Wrap up"/>
+        <p>There are other points to talk about</p>
+        <p>Hard vs Soft rate limiting</p>
+        <Bullet bullets={["Hard : Requests can't exceed threshhoold", "Soft : Requests can exceed threshhold for a short period"]}/>
+        <p>Rate limiting at different levels</p>
+        <Bullet bullets={["We have only talked about rate limiting at the application layer","It is possible to apply rate limiting to all other levels"]}/>
+        <p>Avoid being rate limited, Design client with best practices</p>
+        <Bullet bullets={["Use client cache to avoid making frequent api calls", "Understand the limit and do not send too many requests in a short time frame","Include code to catch errors so your client can succesfully recover from exceptions"]}/>
+        <Chapter title="CHAPTER 5: DESIGN CONSISTENT HASHING"/>
+        <p>For horizontal scaling, it is important to distribute requests efficiently and evenly. This is solved using consistent hashing.</p>
+        <Subheader title="The rehashing problem"/>
+        <p>If you have n cache servers, a common way to balance the load is to use a hashing function. Given a key, the serverIndex = hash(key) % n, where n is the number of servers</p> 
+        <p>Problem arises when you have either added new servers or deleted existing server. Clients will connect to the wrong server.</p>
+        <Subheader title="Consistent Hashing"/>
+        <p>NOTE : Their are images in the book that help describe the process of consistent hashing which are not in this summary.</p>
+        <p>Special kind of hashing such that when the hashtable is resized, only k/n number of keys need to be remapped on average, rather than nearly all keys need to be redistributed</p>
+        <p>HashRing: A visual to describes the hash space. Since we are talking about SHA-1, the possible outputs are discrete value from 0 to 2^(160 - 1)</p>
+        <p>HashServers : Mapping of server ips to values on the hash ring.</p>
+        <p>Hash Keys: Hashed keys are set on the ring. To determine which server the key goes to, we choose the server that is closest clockwise from the key position.</p>
+        <p>Adding a server : Only a fraction of the keys will be distributed. The new server will take a portion of the keys on the server closest clockwise. If we assume the keys are roughly evenly distributed, the number of keys redistributed would be less than the number of keys/number of servers</p>
+
+        <p>Remove a server : Similarly. only a fraction of the keys would be distributed. The server closest clockwise to the deleted server takes over the deleted servers keys </p>
+        <Subheader title="Two issues in the basic approach"/>
+        <p>1.Impossible to keep the same size paritioning on the ring.Since servers are constantly being added and deleted, the hash space between servers.</p>
+        <p>2.Non-uniform key distributions can occur</p>
+        <p>Virtual nodes are used to solve these issues. The main idea is that servers now have multiple nodes that are spread throughout the ring instead. Adding more virtual nodes lowers the standard deviation for the distribution of keys in a server.</p>
+        <p>How can you determine the affected nodes of a server shutdown ? Move anti clockwise from the deleted node until you hit a server. Then the range for the redistributed keys are the server you hit to your deleted node</p>
+        <Chapter title="CHAPTER 6: DESIGN A KEY-VALUE STORE"/>
+        <p>This chapter, we will be going over how to create a key-value store that supports the put and get operations</p>
+        <Subheader title="Single server key-value store"/>
+        <p>This can be easily done using built in hash tables. However, this is bottlenecked by trying to fit everything into memory. A key-value store needs to handle loads of data.</p>
+        <Subheader title="Distributed key-value store"/>
+        <p>A distributed KV-store has many servers and KV pairs are distributed across these servers.</p>
+        <p>CAP theorem : It is impossible for a distributed system to provide more than two of these three guarantees. Consistency,Availability, Partition Tolerance</p>
+        <p>Consistency : All clients see the same data, no matter what node they connect to</p>
+        <p>Availability : Any client that sends a request gets a response, even if some nodes are down</p>
+        <p>Partition tolerance : Communication break between two nodes continues to operate.</p>
+        <p>Generally, partition tolerance is a must, so you must choose either Availablity and Consistency</p>
+        <Subheader title="System components"/>
+        <p>Core components of a KV store</p>
+        <p>Data Partition</p>
+        <Bullet bullets={["Must split data into smaller partitions and store them onto multiple servers", "Done using consistent hashing we described above"]}/>
+        <p>Data replication</p>
+        <Bullet bullets={["Developer chosen parameter N representing the number of servers the key will be replicated", "Work around for virtual nodes involves ignoring nodes of the same server"]}/>
+        <p>Consistency</p>
+        <Bullet bullets={["Data is replicated across multiple nodes, thus must be synchronized","Let N be the number of replicas,W is the write quorum size (Write operations must be acknowledged from W replicas),R is the read quorum size(Read operations must wait for responses from atleast R replicas)",
+    "W,R and N are typically configured based on use case",
+    ]}/>
+    <p>Consistency models</p>
+    <Bullet bullets={["Strong consistency : Any read operation returns a value corresponding to the most recent write data item. Clients never sees out of date data",
+"Weak Consistency : Subsequent read operations may not see the most updated value", "Eventual Consistency : Form of weak consistency, Given enough time, all updates are propagated" ,"Strong consistency is typically not ideal as availablity is severly lowered. An enventual consistent model is highly adopted and what we will use"]}/>
+        <p>Inconsistency resolution: versioning</p>
+        <Bullet bullets={["Replication gives high availabilty but causes inconsistencies among replicas", "Vector clocks are [server,version] pair associated with a data item. Example D([S1,v1],[S2,v2])"]}/>
+
+                    </div>
             </div>
    </Layout>
   )
