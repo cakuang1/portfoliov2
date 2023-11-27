@@ -246,8 +246,15 @@ INTERVIEWS"/>
 
     <Chapter title="CHAPTER 9: DESIGN A WEB CRAWLER"/>
     <p>Web crawler is a robot or spider, which is used by search engines to discover new or updated content on the web.</p>
-    <Bullet bullets={[""]}/>
-        
+    <Bullet bullets={["Search Engine indexing : Most common use case,collects web pages to create a local index for search engines", "Web Archiving : This is the process of collecting information from the web to preserve data for future uses", "Web Mining: Discover useful knowledge from the internet"]}/>
+    <Subheader title="Step 1 - Understand the problem and establish design scope"/>
+    <p>Basic algorithm involves given a set of URLs, download all webpages addressed by the URL,Extract the URLs from these webpages,Add new URLs to the list of URLs to be downloaded. Repeat all 3</p>
+    <Subheader title="Step 2 - Propose high-level design and get buy-in"/>
+    <p>Here are a few high level components of a typical webcrawler</p>
+    <Bullet bullets={["Seed URls : Seed URls are the starting points for the crawl process. Have to be selective about selecting the seed URL, as we want as many new links as possible", "URL frontier:Web crawlers split their crawl state into two: to be downloaded vs already downloaded", "HTML downloader : Downloads web pages from the internet ", "DNS resolver : To downlaod a webpage a DNS must be translated into an ip address. The HTML downloader  is responsible for calling the DNS resolver to get the IP address",
+"Content parser: Web page is downloaded ? Then it must be parsed  and validated because malformed webpages could provoke problems and waste storage space. ","Content Seen ? Eliminate Data redundancy and  shortend processing time", "Content Storage : Storage system for storing HTML content . Most of the content is stored on disk and popular content is stored on memory to reduce latency", "URL extractor : Parses HTML text to extract links","URL Filter : Excludes certain types of content types, filetypes, blacklisted types, etc",
+"URL Seen? Data structure that keeps track of the URLs that are already visted or already in the frontier" ]}/>
+    
                     </div>
             </div>
    </Layout>
