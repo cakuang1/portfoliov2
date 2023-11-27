@@ -112,8 +112,57 @@ export default function EffectiveJava() {
               stack for each function call. What happens to the stack when your
               recursive function runs forever?</p>         
               <p className="font-bold">The stack will infinetly grow, until you run out of memory</p>   
-                
+              <Chapter title="quicksort"/>
+              <p> Divide and conquer techniques involve breaking down a larger problem into subproblems and solving them individually</p>
+              <Subheader title="Divide & conquer"/>
+              <p>Use Divide and conquer to reduce your problem until it becomes the base case</p>
+              <p>Problem statement : We are trying to split our plot size squares of the same size.We want these squares to be as big as psosible.</p>
+              <p> Base case : If one size is the multiple of the other, then you are finished. Else : split your problem by creating the biggest squares thay can fit into the plot, and use the remainning plot as the recursive case</p>
+              <Subheader title="EXERCISES"/>
+              <p>4.1 Write out the code for the earlier sum function</p>
+              <p className="font-bold"> The algorithm goes like this. </p>
+              <p className="text-center">{`
+              def sum(array):
+                  if len(array) == 0:
+                    return 0
+                  elif len(array) == 1:
+                    return array[0]
+                  return array.pop() + sum(array)
 
+              `}</p>
+              <p>4.2 Write a recursive function to count the number of items in a list.</p>
+              <p className="font-bold"> {`
+                def counter(array):
+                  if len(array) == 0:
+                    return 0
+                  array.pop()
+                  return 1 + counter(array)
+
+              `} </p>
+              <p>4.3 Find the maximum number in a list.</p>
+              <p className=""></p>
+              <p>4.4 Remember binary search from chapter 1? It’s a divide-and-conquer
+          algorithm, too. Can you come up with the base case and recursive
+          case for binary search?</p>
+                  <p className="font-bold">Base case: Number is found or we have searched all of array, Recursive case:Number is not found, and search space needs to decrease</p>
+                    <Subheader title="Quicksort"/>
+                    <p> Quicksort is a type of Divide and conquer problem, which can be used to solve sorting in O(nlogn)</p>
+                    <p>Heres how it works :</p>
+                    <Bullet bullets={["Pick an item from the array. This is an arbitary item called the pivot", "Find the elements larger and smaller than the pivot","Call quicksort on the left and right parttions of the array"]}/>
+                    
+                    <p> The average vs worst case scenarios of a quicksort algorithm</p>
+                    <p>When you divide the array evenly each and every time you call quicksort, you are getting the best time possible, with the callstack being O(logn) size .In the worst case, your call stack is O(n)</p>
+                    <Subheader title="EXERCISES"/>
+                    <p>4.5 Printing the value of each element in an array. </p>
+                    <p className="font-bold">O(n)</p>
+                    <p>4.6 Doubling the value of each element in an array.</p>
+                    <p className="font-bold">O(n)</p>
+                    <p>4.7 Doubling the value of just the first element in an array. </p>
+                    <p className="font-bold">O(1)</p>
+                    <p>4.8 Creating a multiplication table with all the elements in the array. So
+                    if your array is [2, 3, 7, 8, 10], you first multiply every element by 2,
+                    then multiply every element by 3, then by 7, and so on.</p>
+                    <p className="font-bold">O(n^2)</p>
                 </div>
             </div>
    </Layout>
