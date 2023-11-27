@@ -51,10 +51,51 @@ export default function EffectiveJava() {
                 <p>When should you use a linked list vs an array?</p>
                 <p>Arrays aren't intrisically dynamic. If you were to exceed the amount of space allocated for an array, you would need to extend the array by moving to a new place in memory and extending the array in memory, then copy over the original array</p>
                 <p>A work around for this is a LinkedList, where items are spread throughout memory and allocated dynamically when an item is added.</p>
-                <p>So what are arrays good for?</p>
+                <p>So what are arrays good for? Well, linked list are horrid at indexing. Suppose you wanted to read some arbitrary item in a linked list. You can't just index into it because you don't know where the item is located. You would need to do a linear search across the entire linked list.</p>
+                <Subheader title="Excercise"/>
 
-
-                
+                <p>2.1 Suppose you’re building an app to keep track of your finances.
+                Every day, you write down everything you spent money on. At the
+                end of the month, you review your expenses and sum up how much
+                you spent. So, you have lots of inserts and a few reads. Should you
+                use an array or a list? </p>
+                <p className="font-bold">Linked Lists will work fine here.</p>
+                <p>2.2 Suppose you’re building an app for restaurants to take customer
+                orders. Your app needs to store a list of orders. Servers keep adding
+                orders to this list, and chefs take orders off the list and make them.
+                It’s an order queue: servers add orders to the back of the queue, and
+                the chef takes the first order off the queue and cooks it.
+                Would you use an array or a linked list to implement this queue?
+                (Hint: Linked lists are good for inserts/deletes, and arrays are good
+                for random access. Which one are you going to be doing here?) </p>
+                <p>Linked lists. If we assume that we aren't randomly acessing elements of the list.Using a doubly linked list would work fine here.</p>
+                <p className="font-bold">2.3 Let’s run a thought experiment. Suppose Facebook keeps a list of
+                usernames. When someone tries to log in to Facebook, a search is
+                done for their username. If their name is in the list of usernames,
+                they can log in. People log in to Facebook pretty often, so there are
+                a lot of searches through this list of usernames. Suppose Facebook
+                uses binary search to search the list. Binary search needs random
+                access—you need to be able to get to the middle of the list of
+                usernames instantly. Knowing this, would you implement the list
+                as an array or a linked list?</p>
+                <p className="font-bold">Arrays. Random indexing is extremely important for binary search.</p>
+                <p>2.4 People sign up for Facebook pretty often, too. Suppose you decided
+              to use an array to store the list of users. What are the downsides
+              of an array for inserts? In particular, suppose you’re using binary
+              search to search for logins. What happens when you add new users
+              to an array?</p>
+              <p className="font-bold"> Insertions take O(n). Since we are using binary search. We would need to keep the array sorted. However, inserting in the middle of the array isn't ideal.</p>
+              <p>2.5 In reality, Facebook uses neither an array nor a linked list to store
+              user information. Let’s consider a hybrid data structure: an array
+              of linked lists. You have an array with 26 slots. Each slot points to a
+              linked list. For example, the first slot in the array points to a linked
+              list containing all the usernames starting with a. The second slot
+              points to a linked list containing all the usernames starting with b,
+              and so on.</p>
+              <p>I would say its faster. Insertions would take constant time. While reads would take the length of the linked list.</p>
+              <Subheader title="Selection sort"/>
+              <p>O(n^2) algorithm that searches the entire list n times to find the largest item and place it at the front of the list</p>
+                              
 
 
                 </div>
