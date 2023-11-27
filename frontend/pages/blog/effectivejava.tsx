@@ -95,8 +95,24 @@ export default function EffectiveJava() {
               <p>I would say its faster. Insertions would take constant time. While reads would take the length of the linked list.</p>
               <Subheader title="Selection sort"/>
               <p>O(n^2) algorithm that searches the entire list n times to find the largest item and place it at the front of the list</p>
-                              
-
+              <Chapter title="Recursion"/>
+              <p>Analogy used : We are finding a key in a box. This box contains other boxes, which also may contain other boxes ..... etc. </p>
+              <p>Here is one approach:</p>
+              <Bullet bullets={["Make of pile of boxes to look through","Grab a box from the pile, and go through it", "If it contains a key you're done", "If it contains box(es), add them to the pile","Repeat"]}/>
+              <p>Heres an alternative approach</p>
+              <Bullet bullets={["1. Look through box", "If you find a box, go to step 1", "Find key? you are done"]}/>    
+              <Subheader title="Base case and recursive case"/>
+              <p>All recursive functions have two parts. The base case, and the recursive case. Recursive case is when the function calls itself  and the base case is when the recursion stops calling itself.</p>
+              <Subheader title="The stack"/>
+              <p> A natural data structure that encompasses the lifecycle of a recursion function is a stack. Say you call a recursive function that calls another function before it is returned. This new function is placed on the stack. Once this function has returned, the function can be removed from the call stack and the original function is also returned.</p>
+              <p>Now imagine a recursive function, where a function calls itself (potentially multiple times). This stack grows until it hits a base case.</p>
+              <Subheader title="Exercise"/>
+              <p>3.2 Suppose you accidentally write a recursive function that runs
+              forever. As you saw, your computer allocates memory on the
+              stack for each function call. What happens to the stack when your
+              recursive function runs forever?</p>         
+              <p className="font-bold">The stack will infinetly grow, until you run out of memory</p>   
+                
 
                 </div>
             </div>
