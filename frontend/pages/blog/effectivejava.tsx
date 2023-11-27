@@ -163,6 +163,40 @@ export default function EffectiveJava() {
                     if your array is [2, 3, 7, 8, 10], you first multiply every element by 2,
                     then multiply every element by 3, then by 7, and so on.</p>
                     <p className="font-bold">O(n^2)</p>
+                    <Chapter title="hash tables"/>
+                    <p>A way of searching a collection of items in constant time</p
+                    >
+                    <Subheader title="Hash Functions"/>
+                    <p>Maps strings to numbers, It should be consistent (Mapping the same string should get the same number). It should map different strings to different numbers.</p>
+                    <p>How are they stored in memory ? </p>
+                    ." "
+                    <Bullet bullets={["The hashtable itself is often implemented as an array and is the primary structure for storing key-value pairs"]}/>
+                    <Subheader title="using Hash tables in caches"/>
+                    <p>Purpose: Checking if the webpage is stored in the hash. If its in the cache, just return, else search the database</p>
+                    <Subheader title="Collisions"/>
+                    <p>Array sizes are typically limited, thus we will eventually run into collisions. To work around this , each element in the array must map to a linked list instead.</p>
+                    <p>Then comes another problem. The worst case scenario it when everything collides into one bucket, and the search time goes linear. To avoid these collisions, we must have a low load factor, and a good hash fucntion</p>
+                    <p>Load Factor</p>
+                    <p> This is just the number of items in the hashtable/number of slots in the array. When you start to have a large loard factor, you need to begin thinking about resizing, thus decreasing the load factor.</p>
+                    <p>A Good Hash Function</p>
+                    <p>Distributes random strings evenly</p>
+                    <Chapter title="breadth-first search"/>
+                    <p>Allows you to find the shortest distance between two things. But the shortest distance can mean alot of thing</p>
+                    <Subheader title="Implementing the Algorithm"/>
+                    <p>Keep a queue containing the number of people to check</p>
+                    <p>Pop a person out of  the queue</p>
+                    <p>Check if the person it the goal</p>
+                    <p>If it is the goal, you are done, else continue popping out the queue</p>
+                    <p>If the queue is empty, your are done and their is no goal</p>
+                    <Subheader title="Dijkstra’s algorithm"/>
+                    <p>BFS finds the shortest path,from one node to another but does not find the fastest path. Now this is the case where edges contain actual numbers instead</p>
+                    <p>Four steps to Dijkstra’s</p>
+                    <Bullet bullets={["Find the cheapest node. This is the node you can get to in the least amount of time", "Update the costs of the neighbors of this node", "Repeat until you have done this for every node in the graph","Calculate the final path"]}/>
+                    <p> Dijkstra's dosent work for negative weighted edges,You would need to use Bellman fords algorthm instead.</p>                    
+                    <Chapter title="Greedy Algorithm"/>
+                    
+
+                    <p></p>
                 </div>
             </div>
    </Layout>
