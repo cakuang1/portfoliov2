@@ -6,7 +6,7 @@ import Bullet from "@/components/blogcomponents/bulletpoints"
 
 
 
-export default function EffectiveJava() {
+export default function GrokkingAlgorithms() {
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
@@ -194,9 +194,29 @@ export default function EffectiveJava() {
                     <Bullet bullets={["Find the cheapest node. This is the node you can get to in the least amount of time", "Update the costs of the neighbors of this node", "Repeat until you have done this for every node in the graph","Calculate the final path"]}/>
                     <p> Dijkstra's dosent work for negative weighted edges,You would need to use Bellman fords algorthm instead.</p>                    
                     <Chapter title="Greedy Algorithm"/>
-                    
-
-                    <p></p>
+                    <Subheader title="The classroom scheduling problem"/>
+                    <p>Problem statement : You have a set of classes available to choose from, but they overlap. Pick the most amount of classes.</p>
+                    <p>Using a greedy algorithm, Pick the class that ends the soonest out of the possible remaining choices</p>
+                    <p>Repeat until you can't pick anymore</p>
+                    <p>This algorithm is an example of a greedy algorithm. That is, find the most optimal choice at every step.</p>
+                    <Subheader title="The knapsack problem"/>
+                    <p>Problem statement : You are a thief with a knapsack that only holds 35 pounds. Greedy strategy is simple, Pick the most expensive thing that can fit in your knapsack, repeat</p>
+                    <p>This dosen't always work</p>
+                    <p> A lot of the time, Greedy solutions aren't optimal but will give you a good enough answer</p>
+                    <Subheader title="EXERCISES"/>
+                    <p>8.1 You work for a furniture company, and you have to ship furniture
+                    all over the country. You need to pack your truck with boxes. All
+                    the boxes are of different sizes, and you’re trying to maximize the
+                    space you use in each truck. How would you pick boxes to maximize
+                    space? Come up with a greedy strategy. Will that give you the
+                    optimal solution? </p>
+                    <p className="font-bold">Pick the smallest boxes first. This can be optimal i think, but it depends on the specific struture of the problem. Are there different dimesions? </p>
+                    <Chapter title="dynamic programming"/>
+                    <Subheader title="The knapsack problem"/>
+                    <p>Problem statement : You are a thief that can only contain carry 4 lbs of goods, you have three items that you can put in the knapsack, which items should you sell to maximize the money?</p>
+                    <p>Every dynamic programming question starts with a grid.The row of the grid is the items and the columns are the knapsack weights from 1 to 4. Your goal is to fill in the all items in the grid</p>
+                    <p>Once the grid is filled the answer will be solved</p>
+                             
                 </div>
             </div>
    </Layout>
