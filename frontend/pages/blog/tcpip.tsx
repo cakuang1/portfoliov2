@@ -2,6 +2,7 @@ import Layout from "@/components/layout"
 import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
 import Bullet from "@/components/blogcomponents/bulletpoints"
+import { SlowBuffer } from "buffer"
 
 
 
@@ -120,14 +121,7 @@ export default function TCPIPnotes() {
                 <p>Two types of stream Operations. Intermediate and Terminate.</p>
                 <p>Intermediate operations are chained together. They transform a stream into another stream. Some examples of Intermediate Operations are map(), filter(),sorted()</p>
                 <p>Terminal Operations are the type of Operations that return the result. Some examples include collect(),forEach(),reduce()</p>
-                <Subheader title=""/>
-                <Subheader title="JDK in Java"/>
-                <p>Stands for Java development kit, offering a collection of tools and libraries needed for developing java-based software applications.</p>
-                <p>Core package used in Java, along with the JVM and JRE. JVM is a component of JRE, with extra classes</p>
-                <p>Comes with the following:</p>
-                <Bullet bullets={["JRE,Interpreter,compiler,archiver"]}/>
-                <p>Jar files are nothing but a pack of classes.</p>
-                <Subheader title="How JVM works"/>
+                <Subheader title="How JVM Works"/>
                 <p>JVM acts as a run-time engine to run Java applications</p>
                 <p>Class loader system has three activities. Loading,Linking,Initialization</p>
                 <p>Loader : Reads the .class file and generates the corresponding binary data and saves it in the method area. The information being stored is the name of the loaded class and its parent class,Modifier,variables and methods</p>
@@ -144,35 +138,92 @@ export default function TCPIPnotes() {
                 <p>Interpreter : Interprets the the bytecode line by line. When a method is called multiple times, the interpreter is required</p>
                 <p>JIT: Increases efficiency of an interpreter. Compiles the entire bytecode and changes it to native code. If JIT has compiled repeated method calls, JIT provides direct native code</p>
                 <p>Garbage collector : Destroyed unreferenced objects</p>
-                <Subheader title="JIT"/>
-                <p>Converts bytecode to native machine language for execution has a huge impact on its speed.</p>
-                <p>Can perform simple optimizations while compiling a series of bytecode to native machine code.</p>
-                <p>For a compiled method,the JVM calls the method directly instead of interpreting the code, similar to caching.</p>
-                <p>JIT compilation can affect start up time,even if the end result is a very good perfomance optimization</p>
-                <Subheader title="Difference between Byte Code and Machine Code"/>
-                <p>ByteCode : Intermediate between source code and machine code. It cannot be run directly on the CPU. Represented in .class files, that represent classes</p>
-                <p>MachineCode : Code that is proccessed by the cpu. Obtained after compilation or interpretation</p>
-                <Chapter title="Java Basic Syntax"/>
-                <p>Basic terminology</p>
+                <Subheader title="Java Garbage"/>
+                <p>Automatic process which lives in the JVM.There are many specifications but Oracle HotSpot if the most popular</p>
+                <p>Mark,delete,compact</p>
+        
+                <Subheader title="Basics of Threads"/>
+                <p>Processces vs Threads.</p>
+                <p>Proccesses are heavy weight, each allocating a seperate memory area. Costs of communication is high and takes along time</p>
+                <p>Threads are lightweights and share the same memory space</p>
+                <p>Threads are typically 5 states</p>
+                <p>1 : New State - By default, a thread will be in a new state, which code has not been run</p>
+                <p>2 : Active state - Active state when it is invoked by the start() method. Contain two sub-states.Runnable state(Thread is ready to run at any given time). Running State - Thread receives CPU allocated by Thread Scheduler, runs, and then transfers back to the runnable state</p>
+                <p>3 : Waiting/Blocked State  - Waiting for another thread to finish some work before running again. The scheduler optimizes this by allocating the CPU on a priority basis.</p>
+                <p>4 : Timed Waiting State - Each thread has a time period for which sleep() method is invoked after the time expires</p>
+                <p>5 : Terminated State - Terminated State when the task is finnished, unsual effects.</p>
+                <p> Creating threads manually in Java</p>
+                <p> Threads must be created manually by extending the Thread class. This provides the contructors and methods for creating and performing operations  on a thread</p>
+                <Chapter title="Build Tools"/>
+                <p>A build tool is a program or command-line utility that automates the process of compiling, assembling, and deploying software.
 
-                <Subheader title="Java Hello World Program"/>
-                <p>Implementing a java program</p>
-                <p>1 : Create the program</p>
-                <p>2 : Compile the program</p>
-                <p>3 : Running the program</p>
-                <p>Syntax explanations</p>
-                <p>public : JVM can executre the method from anywhere</p>
-                <p>static : The main method can be called without an object. You can simply use the class name</p>
-                <Subheader title="Java Data Types"/>
+Build tools are not only limited to compiling code; they can also help with package management, dependency handling, and continuous integration systems.</p>
+                <p>Will only go over Maven here</p>
+                <Subheader title="Maven"/>
+                <p>Maven is an open-source build tool, used primarily for Java projects</p>
+                <p>Maven files are in the form of POM files, which are XML type files that contains information such as related to the project and configuration information such as dependencies, source directory, plugin, goals etc.</p>
+                <p>Dependencies are external Java libraries required for Project and repositories are directories of packaged JAR files.</p>
+                <p>Maven lifecycle</p>
+                <p>validate: Validates the project configuration.</p>
+                <p>compile: Compiles the source code into bytecode.</p>
+                <p>test: Runs the tests for the project.</p>
+                <p>package: Packages the compiled code and resources into an artifact (e.g., JAR, WAR).</p>
+                <p>install: Installs the artifact in the local repository.</p>
+                <p>deploy: Copies the artifact to a remote repository.</p>
+                <p>Maven reads the pom.xml file.Maven downloads the dependencies defined in the pom.xml file into the local repository from the central or remote repository.Maven executes the life cycles, phases, goals, and plugins defined in the pom.xml file.</p>
+                
 
-                <Chapter title="4 Main Object Oriented Programming concepts "/>
+                <Chapter title="Web Frameworks"/>
+                <p>Will go over the Spring/Springboot frameworks on a serperate post</p>
+                <Chapter title="ORM"/>
+                <p>A programming method to map objects in Java to relational entities in a database. In other words, converting data between relational databases and object-oriented programming languages.</p>
+                <Subheader title="JPA"/>
+                <p>JPA is not a tool nor a framework, but a set of interfaces for accessing, persisting, and managing data between Java objects and (a) relational database.</p>
+                <p>Since it is a set of interfaces, it will require implementation to work with and persist Java Objects</p>
+                <p>Features of JPA include Caching,Cleaner ORM,and can plug in persistence providers like Hibernate</p>
+                <Subheader title="Hibernate"/>
+                <p> Hibernate is an Object-Relational Mapping (ORM) framework that implements the JPA specification. This means that Hibernate provides a concrete implementation of the JPA interfaces and specifications. </p>
+                <p>Hibernate simplifies database interactions by abstracting away the details of SQL queries and providing a way to work with Java objects directly.</p>
+                <p>It handles the mapping between Java entities and database tables, manages transactions, and provides a convenient API for developers to perform database operations in a Java-centric way.</p>
+                <Chapter title="JDBC"/>
+                <p>JDBC is an API(Application programming interface) used in java programming to interact with databases. The classes and interfaces of JDBC allow the application to send requests made by users to the specified database.</p>
+                <p>JDBC is a low-level API that provides a direct connection to the database. It requires developers to write SQL queries and handle the details of database connections, statements, result sets, and transactions.</p>
+            </div>
+            <div className="text-center mt-20 font-bold">Spring Boot Section</div>
+            <div className="mt-4">
+            <Chapter title="Spring Core"/>
+            <p>The core module of Spring, also known as the “Spring Core” module, is at the heart of the framework and provides the fundamental functionality for dependency injection (DI) and inversion of control (IoC).</p>
+            <Subheader title="IOC"/>
+            <p>Objects define their dependencies only through contructor arguments, arguments to a factory method.</p>
+            <p>Container then injects those dependencies when it creates the bean</p>
+            <p>The idea of IOC is that instead of objects creating their own dependecies, the dependencies are instead being injected into the components by some external entity, like the IOC container</p>
+            <p>The Container is represented by the org.springframework.context.ApplicationContext interface, which is responsible for instantiating, configuring, and assembling the beans</p>
+            <Subheader title="Beans"/>
+            <p>IOC container manages beans.Beans that are stored in an IOC container are represented as BeanDefinition Objects, which contain metadata about the bean</p>
+            <p>A Bean definition is a recipe for creating the object.</p>
+            <Subheader title="Dependency Injection"/>
+            <p>Different ways of injecting a dependency</p>
+            <p>Constructor-based Dependency Injection : Container invoking a contructor with a number of arguments each representing a depedency</p>
+            <p>Lazy-initialized Beans : Beans are eagerly created at default </p>
+            <Subheader title="Spring AOP"/>
+            <p>Spring AOP (Aspect-Oriented Programming) is a feature of the Spring Framework that allows developers to define certain behaviors (i.e., “aspects”) that cut across multiple classes, such as logging or transaction management.</p>
+            <p>Here are some common concepts</p>
+            <p>Aspect: A module encapsulating a cross-cutting concern. It contains advice and possibly additional code for various join points.</p>
+            <p>The code that gets executed at a particular join point. There are different types of advice, including "before," "after," "around," etc. For example, "before" advice executes before a join point, and "after" advice executes after a join point. </p>
+            <p>Join Point: A point in the execution of a program, such as method calls, exception handling, or field access. Join points are where advice can be applied.</p>
+            <p>Pointcut: A set of one or more join points where advice should be applied. Pointcuts define the conditions for selecting join points.</p>
+            <Subheader title="Spring MVC"/>
+            <p>A Spring MVC is a Java framework which is used to build web applications. It follows the Model-View-Controller design pattern.</p>
+            <p>Desgined around the DispatcherServelet that dispatches requests to handlers.</p>
+            <p>Heres how a general HTTP request looks like </p>
+            <Bullet bullets={["After receiving request, the DispatcheServlet consults the HandlerMapping to call the appropriate controller","The controller takes the request and calls the service methods , which will set the model data","The Dispatcher servlet will take help from ViewResolver to pickup the defined view", "Model data and view is then passed back to the serlet and rendered"]}/>
+            <Subheader title="Annotations"/>
+            <p>Annotations are used to provide metadata and configuration information to the sping container. Here are some common ones and what they do</p>
+            <Bullet bullets={["@Component : Marks a Java class as a Spring component, indicating that the class should be automatically detected and registered as a bean",
+          "@Controller : Mark class as a spring MVC controller. Handle web requests and define methods to process those requests",
+          "@Service : Indicates that "]}/>
 
             </div>
-            
-            <div>
-
-
-                    </div>
             </div>
    </Layout>
   )
