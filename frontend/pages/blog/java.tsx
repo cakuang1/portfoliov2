@@ -221,7 +221,11 @@ Build tools are not only limited to compiling code; they can also help with pack
             <p>Annotations are used to provide metadata and configuration information to the sping container. Here are some common ones and what they do</p>
             <Bullet bullets={["@Component : Marks a Java class as a Spring component, indicating that the class should be automatically detected and registered as a bean",
           "@Controller : Mark class as a spring MVC controller. Handle web requests and define methods to process those requests",
-          "@Service : Indicates that "]}/>
+          "@Service : Indicates class is a service class,typically used to contain business logic (After you query your database",
+      
+          "@Repository : Indicates that a class is a Spring Data repository. It is used to work with databases and provides mechanisms for CRUD operations.",
+          "@Autowired :Marks a constructor, field, or setter method to be autowired by the Spring container. It injects a dependency, and you don't have to explicitly write the bean injection code.",
+          "@Value:Used to inject values from properties files or other sources into Spring beans. It can be applied to fields, methods, and constructor parameters."]}/>
 
             </div>
             </div>
