@@ -279,7 +279,85 @@ utility?</p>
 <p> In c pthread_create takes in 4 parameters, thread,attr,start_routine, and arg</p>
 <p>Thread is a pointer to  a strucutre of type pthread_t,attr is used to specify and attributes this thread might have , like stack size,start_routine is a function pointer to where you want the thread to start,arg is the parameters to the function call</p>
 <p>27.2 Thread Completion</p>
-<p>How do you</p>
+<p>How do you wait for a thread completion</p>
+<p>int pthread_join(pthread_t thread, void **value_ptr);</p>
+<p>pthread_t is the specific thread you want to wait for, and the second argument is a pointer to the return value</p>
+<p>27.3 Locks</p>
+<p>int pthread_mutex_lock(pthread_mutex_t *mutex);
+int pthread_mutex_unlock(pthread_mutex_t *mutex);</p>
+<p>Used for critical sections and away shared variables so only one thread has access</p>
+<Subheader title="28 : Locks"/>
+<p>Global variable lock. Routine Lock() shares the lock to the thread if no other thread has the lock.unlock() routine unlocks the lock and the lock is available to other threads</p>
+<p>28.2 Pthread Locks</p>
+<p>POSIX library, the thread lock is called a mutex, which stands for mutually exclusive</p>
+<p>28.3 Building A Lock</p>
+<p>THE CRUX: HOW TO BUILD A LOCK
+How can we build an efficient lock? Efficient locks provide mutual
+exclusion at low cost, and also might attain a few other properties we
+discuss below. What hardware support is needed? What OS support?</p>
+<p>28.4 Evaluating Locks</p>
+<p>Understanding the goal of a lock</p>
+<p>First, does it do its job. Is it mutually exclusive and only one thread can access the critical section at the same time</p>
+<p>Second , is the lock fair? How do you handle multiple threads trying to grab a lock</p>
+<p>Third , performance. Is there additional overhead for using the lock. </p>
+<p>28.5 Controlling Interrupts</p>
+<p>Disabling interupts before entering a critical section will not be interuppted. This is in a single proccessor system</p>
+<p>Dosen't work for multi processor systems and exposes a privelaged operation to threads</p>
+<p>28.6 A Failed Attempt: Just Using Loads/Stores</p>
+<p>First attempt is to use a flag variable to indicate when a thread has a lock. When a thread tries to access a lock, if the flag is 1, the thread spin-waits in a while until the thread calls unlock()</p>
+<p>This is a bad idea</p>
+<p>28.7 Building Working Spin Locks with Test-And-Set</p>
+<p>Uses a test and set model, where a thread will continuously read and set the flag variable until the thread using a lock in unlocked</p>
+<p>28.8 Evaluating Spin Locks</p>
+<p>Correctness : Yes, the spin lock will only allow a single thread to enter the critical section</p>
+<p>Fairness : Not fair, may lead to starvation </p>
+<p>Performance : Single core ? Pretty bad, as the thread that has the lock may switch. On multiple cores, sping locks can work will if the number of threads is roughlt equal to the number of CPUs</p>
+<p>28.9 Compare-And-Swap</p>
+<p>The idea is simple check is a value of a ptr is equal to expected, if so, ipdate the memory location pointed t oby ptr with the new value. Else do nothing. In either case, return the original value</p>
+<p>28.10 Load-Linked and Store-Conditional</p>
+<p>LL loads a value from a memory location atomically and returns the value. SC attempts to store a value into a memory location only if not other changes have occured at that location since LL instruction</p>
+<p>Non-locking model</p>
+<p>28.11 Fetch and Add</p>
+<p>Atomically increments a value while returning the bold value at the address.</p>
+<p>This is used to create a ticket lock, in which the globally shared variable lock is used to determine which thread's turn it is</p>
+<p>28.12 Too Much Spinning: What Now?</p>
+<p>THE CRUX: HOW TO AVOID SPINNING
+How can we develop a lock that doesn’t needlessly waste time spinning on the CPU?</p>
+<p>A simple approach would be to yield. Yield when you are locked out instead of spinning for the threads duration </p>
+<p>This works if there are a few threads, but imagine if you have 100 threads who are waiting for a 1 lock. All of these threads must yeild, and in the cost of context switching will be substantial</p>
+<p>We have also not addresed starvation</p>
+<Subheader title="29 : Lock-based Concurrent Data Structures"/>
+<p>How do we add locks to data structures and make them thread safe?</p>
+<p>CRUX: HOW TO ADD LOCKS TO DATA STRUCTURES
+When given a particular data structure, how should we add locks to
+it, in order to make it work correctly? Further, how do we add locks such
+that the data structure yields high performance, enabling many threads
+to access the structure at once, i.e., concurrently?</p>
+<p>29.1 Concurrent Counters</p>
+<p>A simple counter with a single lock will do. Each operation is wrapped in a lock (get,increment,decrement)</p>
+<p>However, the performance slows down massively as more threads are added on</p>
+<p>Scalable Counting</p>
+<p>Approximate counters can be a solution to scalability.The idea is to use local counters for each CPU core and a global counter with periodic transfers to the global counter</p>
+<p>This make scaling much faster, as threads are not constantly fighting for locks</p>
+<p>29.2 Concurrent Linked Lists</p>
+<p>Instead of one lock, we introduce a lock per node model</p>
+<p>The hand over hand approach may limit its scalability and performance compared to simpler locking strategies</p>
+<p>29.3 Concurrent Queues</p>
+<p>Two locks, front and back of queue</p>
+<p>29.4 Concurrent Hash Table</p>
+<p>Lock per hashbucket, allowing many conccurent operations to happen</p>
+<Subheader title="30 : Condition Variables"/>
+
+<p>THE CRUX: HOW TO WAIT FOR A CONDITION
+In multi-threaded programs, it is often useful for a thread to wait for
+some condition to become true before proceeding. The simple approach,
+of just spinning until the condition becomes true, is grossly inefficient
+and wastes CPU cycles, and in some cases, can be incorrect. Thus, how
+should a thread wait for a condition?</p>
+<p>30.1 Definition and Routines</p>
+<p>A condition variabl is a sycnhronization primitive used in a multithreaded program. It allows threads to wait for a specific condition ot be come true before proceeding</p>
+<p>The two main operations associated with condition variables are wait() and signal()</p>
+<p>Condition </p>
             </div>
                 
    </Layout>
