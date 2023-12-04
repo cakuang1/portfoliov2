@@ -357,7 +357,65 @@ should a thread wait for a condition?</p>
 <p>30.1 Definition and Routines</p>
 <p>A condition variabl is a sycnhronization primitive used in a multithreaded program. It allows threads to wait for a specific condition ot be come true before proceeding</p>
 <p>The two main operations associated with condition variables are wait() and signal()</p>
-<p>Condition </p>
+<p>30.2 The Producer/Consumer (Bounded Buffer) Problem </p>
+<p>Also called the bounded buffer problem. Problem statement: One or more producer threads and one or more consumer threads.Producers produce onto buffers and consumers consume</p>
+<p>The Single Buffer Producer/Consumer Solution</p>
+<p>Two condition variables. Producer waits on the condtition empty, and signals fill. Consumer waits on fill and signals empty</p>
+<Subheader title="31 : Semaphores"/>
+<p>THE CRUX: HOW TO USE SEMAPHORES
+How can we use semaphores instead of locks and condition variables?
+What is the definition of a semaphore? What is a binary semaphore? Is
+it straightforward to build a semaphore out of locks and condition variables? To build locks and condition variables out of semaphores?</p>
+<p>31.1 Semaphores: A Definition</p>
+<p>Semaphores contain an initial parameter and two ways to interact with it. Wait and Post</p>
+<p>The idea behind a semaphore is to act as a counter that tracks the number of available resources.This limit</p>
+<p>Binary Semaphores</p>
+<p>Two states, 0 or 1. 0 means no permit is available and trying to aquire a permit will result in blocking. Can act as simpel mutex locks</p>
+<Chapter title="Persistence"/>
+<Subheader title="36 : IO Devices"/>
+<p>CRUX: HOW TO INTEGRATE I/O INTO SYSTEMS
+How should I/O be integrated into systems? What are the general
+mechanisms? How can we make them efficient?</p>
+<p>36.1 System Architecture</p>
+<p>Memory bus : Connects CPU to memory</p>
+<p>General IO Bus or PCI :  Graphics and other higher performance I/O</p>
+<p>Peripheral I/O : Disks,Mices,KeyBoards</p>
+<p>CPU connects to an I/O chip DMI, and the rest of devices connect to this chip through different interfaces</p>
+<p>36.2 A Canonical Device</p>
+<p>Two components : Hardware interface it presents to the rest of the system. Internal structure :Responsible for implementing the abstraction the device presents to the system</p>
+<p>36.3 The Canonical Protocol</p>
+<p>The example interface shown in the book consists of three components. Status,Data, and Command</p>
+<p>The OS kernel interacts with these devices through these interfaces. Heres the typical protocol.</p>
+<Bullet bullets={["Os starts by polling (asking the device for status)","If available , the OS sends data through the data register", "OS writes a command", "OS waits for device by consistently polling"]}/>
+<p>36.4 Lowering CPU Overhead With Interrupts</p>
+<p>The interrupt : Instead of polling until the device is finished, the OS issues a request,puts the calling process to sleep, and context switches to another task</p>
+<p>These interrupts aren't always helpful for short tasks, as the overhead of context switching may take longer than the actual task itself. Can use a hybrid approach which polls for a short amount of time before</p>
+<p>36.5 More Efficient Data Movement With DMA</p>
+<p>THE CRUX: HOW TO LOWER PIO OVERHEADS
+With PIO, the CPU spends too much time moving data to and from
+devices by hand. How can we offload this work and thus allow the CPU
+to be more effectively utilized?</p>
+<p>The solution to this is DMA, which can orchestrate transfers between devices and main memory without CPU intervention</p>
+<p>This offloads the tasks of copying from memory from the CPU to the DMA, and allows the CPU to work on other tasks.The DMA raises an interupt when finished</p>
+<p>36.6 Methods Of Device Interaction</p>
+<p>THE CRUX: HOW TO COMMUNICATE WITH DEVICES
+How should the hardware communicate with a device? Should there
+be explicit instructions? Or are there other ways to do it?</p>
+<p>Method 1 : Explicity I/O instructions. Devices will have a specific I/O instructions to specify a way for the OS to send data</p>
+<p>Method 2 : Memory mapped I/O . Hardware makes device registers available as if they were memory locations. You simply load and store to the address</p>
+<p>36.7 Fitting Into The OS: The Device Driver</p>
+<p>THE CRUX: HOW TO BUILD A DEVICE-NEUTRAL OS
+How can we keep most of the OS device-neutral, thus hiding the details of device interactions from major OS subsystems?</p>
+<p>Device Drivers : A way for the OS to interact with devices. Serves as an interface between the OS and devices</p>
+<p>Works as an abstraction that allows developers to write software that can work with a variety of hardware devices without having to rely on specifics about the device.</p>
+<p>Similar to an API, where the device provides a set of rules and protocols for the OS to follow</p>
+<Subheader title="37 : Hard Disk Drives"/>
+<p>CRUX: HOW TO STORE AND ACCESS DATA ON DISK
+How do modern hard-disk drives store data? What is the interface?
+How is the data actually laid out and accessed? How does disk scheduling improve performance?</p>
+<p>Basic interface is simple. 512 byte blocks numbered from 0 to n - 1 which represent address spaces. These blocks are also called sectors</p>
+<p>37.2 Basic Geometry</p>
+<p>Platter : Circular </p>
             </div>
                 
    </Layout>
