@@ -415,7 +415,22 @@ How do modern hard-disk drives store data? What is the interface?
 How is the data actually laid out and accessed? How does disk scheduling improve performance?</p>
 <p>Basic interface is simple. 512 byte blocks numbered from 0 to n - 1 which represent address spaces. These blocks are also called sectors</p>
 <p>37.2 Basic Geometry</p>
-<p>Platter : Circular </p>
+<p>Platter : Circular surface that stores persistent data by inducting magnetic charges. Disk may have one or many</p>
+<p>Spindle : Motor that spins the platters. Rate of rotation is 7200 - 15000 rpm</p>
+<p>Track  : Concentric circles of sectors</p>
+<p>Disk Head : Reading and writing. One head per surface</p>
+<p>Disk Arm : Attaches to the disk head</p>
+<p>Rest of the subsection goes over scheduling disk jobs, similar to the process section. Will not go over</p>
+<Subheader title="39 : Interlude: Files and Directories"/>
+<p>CRUX: HOW TO MANAGE A PERSISTENT DEVICE
+How should the OS manage a persistent device? What are the APIs?
+What are the important aspects of the implementation?</p>
+<p>39.1 Files And Directories</p>
+<p>Two key abstractions have been developed over time in the virtualization of storage, the file and directory</p>
+<p>Files : Linear array of bytes which you can read or write. Directory : Consists of a list of pairs, which are mappings from user provided names and low-level names</p>
+<p>39.3 Creating Files</p>
+<p>open() routine returns a file descriptor that allows you to call other methods to access the file (read and write)</p>
+<p></p>
             </div>
                 
    </Layout>
