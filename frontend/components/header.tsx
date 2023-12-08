@@ -56,10 +56,10 @@ const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                href="/blog"
+                href="/readings"
                 className="hover:text-gray-400 transition duration-300 ease-in-out"
               >
-                Blog
+                Readings
               </Link>
             </li>
             <li>

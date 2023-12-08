@@ -5,7 +5,6 @@ import Bullet from "@/components/blogcomponents/bulletpoints"
 
 
 
-
 export default function GrokkingAlgorithms() {
   return (
     <Layout> 

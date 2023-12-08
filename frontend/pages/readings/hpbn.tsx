@@ -1,12 +1,11 @@
 import Layout from "@/components/layout"
 import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
-import Bullet from "@/components/blogcomponents/bulletpoints"
-import { SlowBuffer } from "buffer"
 
 
 
-export default function TCPIPnotes() {
+
+export default function Hpbn() {
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
@@ -155,10 +154,8 @@ The bandwidth-delay product (BDP) is a network parameter that represents the amo
 <Subheader title="Header Compression
 "/>
 <p>1.x, headers are always sent as plain text and adds additional overhead</p>
-<p>To reduce overhead, 2 compresses request and response header metadata</p>
- 
-
-            </div>
+<p>To reduce overhead, 2 compresses request and response header metadata</p>  
+            </div>  
             </div>
    </Layout>
   )

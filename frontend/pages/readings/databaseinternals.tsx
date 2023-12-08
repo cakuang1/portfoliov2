@@ -3,17 +3,14 @@ import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
 import Bullet from "@/components/blogcomponents/bulletpoints"
 
-
-
 export default function Databaseinternals() {
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">DataBase Internals</h1>
-                <h2>High level overview of the chapters I decided to read</h2>
+                <h2>Mainly focused on database concepts. Skipped distributed systems portion of the book, mainly focue </h2>
             </div>
-            
             <div>
                   <Chapter title="Chapter 1. Introduction and Overview" />
                   <p>Multiple types of DBMS(Database Management Systems) that serve different purposes. Your job is to know when to know which one fits your problem.</p>
