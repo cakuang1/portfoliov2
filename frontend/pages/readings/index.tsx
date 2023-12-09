@@ -65,12 +65,11 @@ export default function Blog() {
           <div className='w-3/5 mx-auto'>
           <div className=" mt-14">
           <h1 className="font-bold text-3xl  text-center"><span className="border-b-2 border-purple">Readings</span></h1>
-                <h1 className="text-lg text-center mt-8">Here are some of the textbook readings I have notes on.  </h1>
+          <h2 className="text-lg text-center mt-8">I read but I often forget. So I write high level notes about the text </h2>
+                <h2 className="text-lg text-center ">Here are some of the textbooks I have read   </h2>
                   <BlogComponent {...operating}/>
                   <BlogComponent {...algorithms}/>
-
-
-
+                  
                 <div>
                 </div>
             </div>
