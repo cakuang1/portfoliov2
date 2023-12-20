@@ -11,7 +11,7 @@ export default function DistributedSystems() {
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Grokking Algorithms</h1>
-                <h2>Summarizing Grokking algorithms so I can pass these interviews</h2>
+                <h2>The book "Understanding Distributed Systems" by Roberto Vitillo</h2>
             </div>  
             <div>
                 <Chapter title="Introduction"/>
