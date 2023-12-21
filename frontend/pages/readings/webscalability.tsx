@@ -55,9 +55,36 @@ Software Design"/>
 <p>Statelessness is the idea that requests do not hold any data. This allows for copies of servers to serve the same data no matter where the request came from</p>
 <Subheader title="Components of the Scalable Front End"/>
 <p>
-
-  ,
+DNS : Third party DNS providers are typically  used to convert domain names to an IP address. This IP address would be the load balancer closest to the client
 </p>
+<p>Load Balancers : Entry point to Web service endpoints, allowing scaling your web servers. There are many benefits to using a load balancer, hidden server maintenance, Increasing capacity, failure management, automatic scaling</p>
+<p>Load balancers are also provided through third party services, or one which can be self-managed, using an open source one</p>
+<p>Web Servers typically contain your application and business logic which do most of the actaul processing </p>
+<p>Caching reduces the amount of recurrent processing your web services have to do. A CDN is an example of a cache that stores static pages so your server dosen't need to continue serving static pages</p>
+<p>However, the more personalized or dynamic your application is, the harder it is to design caches</p>
+<p>Auto Scaling : Automating infrastructure so that new virtual servers are added dependent of server load</p>
+<p>Auto scaling is great for unexpected spikes in traffic patterns. The most easiest way to implement it is using a third party provider</p>
+
+<Chapter title="4 Web Services"/>
+<Subheader title="Designing Web Services"/>
+<p>API first approach became much more common as new user interfaces arose. This allows all clients to use the same API, independent of what 
+  medium the client is using.
+</p>
+<p>Pragmatic Approach would be a combination. </p>
+<Subheader title="Pragmatic Approach"/>
+<p>Function centric services : Call functions on remote machines without the need to know how these functions or objects are implemented</p>
+<p>Resource-Centric Services : Focused on developing webservices on the concept of a resource instead of a function. Resources can be treated as an object with limited amounts of operations performed. Typically use JSON due to it simplicity</p>
+<Subheader title="Scaling REST Web Services"/>
+<p>Keep Service Machines stateless  : Make all of your web service machines stateless, pushing your service dependent data into shared data stores</p>
+<p>Stateless web services provides loads of benefits, including load balancing compatibility, scalability, avaialbility by adding redundant servers, etc</p>
+<p>Caching Service Responses by HTTP protocol caching, as GET methods can be cached. If GET handlers are read only, this is fairly easy, as any resource should not change</p>
+<Subheader title="Functional Partitioning"/>
+<p>Split large systems into a set of smaller, loosely coupled parts so that they can run across more machiens rather than having ot run on a single machine. This allows for independent scaling .</p>
+<p>Main challenge when starting functional partitioning is doing it too early or creating too many paritions</p>
+<Chapter title="5 Data Layer"/>
+<Subheader title="Scaling with MySQL"/>
+<p>MySQL uses the master slave pattern, where applications can send reads to the slaves, but only modify data through the master. These changes from the master are stored in logs, which can be sent to slave servers</p>
+<p>This is an asynchronous process, which means that the master does not wait for the slaves to </p>
             </div>
             </div>
    </Layout>
