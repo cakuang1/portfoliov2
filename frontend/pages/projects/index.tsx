@@ -129,6 +129,16 @@ const remotesf = {
 }
 
 
+const mapreduce  = {
+  image : '/remotesf.png',
+  title : "Multi-Threaded Single Machine MapReduce Framework",
+  description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process using Golang Threads and Channels",
+  technologies : [""],
+  languages : ["Golang"] ,
+  functionality : ["Easily customizable by simply altering the reduce and map functions", "Provides  a single and multithreaded implementation "],
+  link : '',
+  deployed: false
+}
 
 
 const Project: React.FC = () => {
@@ -152,8 +162,9 @@ const Project: React.FC = () => {
                         <ProjectItem items={punapi} />
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
-                      <ProjectItem items={remotesf}/> 
                       <ProjectItem items={portfolio}/>
+                      <ProjectItem items={remotesf}/> 
+                      <ProjectItem items={mapreduce}/>
                       <ProjectItem items={chrome}/>
                       <ProjectItem items={datapipeline}/>
       </div>

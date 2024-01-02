@@ -2,12 +2,8 @@ import Layout from "@/components/layout"
 import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
 import Bullet from "@/components/blogcomponents/bulletpoints"
-import { SlowBuffer } from "buffer"
-import { Sign } from "crypto"
 
-
-
-export default function TCPIPnotes() {
+export default function WebScalability() {
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
@@ -84,7 +80,14 @@ DNS : Third party DNS providers are typically  used to convert domain names to a
 <Chapter title="5 Data Layer"/>
 <Subheader title="Scaling with MySQL"/>
 <p>MySQL uses the master slave pattern, where applications can send reads to the slaves, but only modify data through the master. These changes from the master are stored in logs, which can be sent to slave servers</p>
-<p>This is an asynchronous process, which means that the master does not wait for the slaves to </p>
+<p>This is an asynchronous process, which means that the master does not wait for the slaves to synchronize changes from logs to start serving again</p>
+<p>This replication pattern is useful for a multitude of reasons. Reads can be distributed among slaves, which can be scaled. Different slaves can provide different types of queries (Fast and SLow Queries)</p>
+<p>One of the main reasons for replication is to provide backups to increase availability by reducing the time needed to replcae the broken database</p>
+<p>If the Master fails, MySQL does not support automated promotion, and you will need to reconfigure the new master yourself</p>
+<p>Master-Master is also a replication method, but I will not go over</p>
+<p>Data Partitioning (Sharding) : Divide data into smaller pieces so that it could be distribued across multiple machiens and none of the servers need to deal with the entire data set</p>
+<p>Core idea is that you divide your data in some way such that each server would only get a subset of the entire dataset</p>
+<p>This allows for true horizontal scalablity. However, this comes with challenges, such as queries that must access different shards </
             </div>
             </div>
    </Layout>
