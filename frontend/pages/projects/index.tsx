@@ -6,7 +6,6 @@ import Layout from '@/components/layout';
 
 
 
-
 const stocksimulator = {
     image : '/stock.png',
     title : "StockSimulator",
@@ -130,7 +129,7 @@ const remotesf = {
 
 
 const mapreduce  = {
-  image : '/remotesf.png',
+  image : '/mapreduce.png',
   title : "Multi-Threaded Single Machine MapReduce Framework",
   description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process using Golang Threads and Channels",
   technologies : [""],
