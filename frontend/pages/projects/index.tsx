@@ -4,8 +4,6 @@ import ProjectItem from '@/components/projectitem';
 import Layout from '@/components/layout';
 
 
-
-
 const stocksimulator = {
     image : '/stock.png',
     title : "StockSimulator",
@@ -24,8 +22,8 @@ const bookrecc = {
   languages : ['Java',"Typescript"],
   functionality : ['Users can create their lists of books using a search feature fed from GoogleBooksAPI',"Recomendation engine powered by OpenAI to suggest new books"],
   link : '/projects/openai'
-}
 
+}
 
 const chrome = {
   image : '/rabbit.png',
@@ -44,7 +42,7 @@ const portfolio = {
   technologies : ["AWS","NextJS","TailwindCSS"],
   languages : ['TypeScript',"Python"],
   functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/projects/cloudresume',
+  link : '/projects/cloudresum  e',
   deployed : true
 }
 
@@ -127,16 +125,15 @@ const remotesf = {
   deployed: true
 }
 
-
 const mapreduce  = {
   image : '/mapreduce.png',
   title : "Multi-Threaded Single Machine MapReduce Framework",
-  description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process using Golang Threads and Channels",
+  description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process. Done by simulating w",
   technologies : [""],
   languages : ["Golang"] ,
-  functionality : ["Easily customizable by simply altering the reduce and map functions", "Provides  a single and multithreaded implementation "],
-  link : '',
-  deployed: false
+  functionality : ["Easily customizable by simply altering the reduce and map functions", "Provides a single and multithreaded implementation" , "Simple and easy to use API "],
+  link : 'https://github.com/cakuang1/ThreadedMapreduce',
+  deployed : true,
 }
 
 

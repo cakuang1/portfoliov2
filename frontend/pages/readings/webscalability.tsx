@@ -1,7 +1,6 @@
 import Layout from "@/components/layout"
 import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
-import Bullet from "@/components/blogcomponents/bulletpoints"
 
 export default function WebScalability() {
   return (
@@ -87,7 +86,12 @@ DNS : Third party DNS providers are typically  used to convert domain names to a
 <p>Master-Master is also a replication method, but I will not go over</p>
 <p>Data Partitioning (Sharding) : Divide data into smaller pieces so that it could be distribued across multiple machiens and none of the servers need to deal with the entire data set</p>
 <p>Core idea is that you divide your data in some way such that each server would only get a subset of the entire dataset</p>
-<p>This allows for true horizontal scalablity. However, this comes with challenges, such as queries that must access different shards </
+<p>This allows for true horizontal scalablity. However, this comes with challenges, such as queries that must access different shards </p>
+
+<Subheader title="NoSQL Databases"/>
+<p>Eventual consistency is a property of a system  where different nodes have different versions of data, but changes will 'eventually propogate'. This is a tradeoff for high availability. This is seen in DynamoDB</p>
+<p>Cassandra clients can send </p>
+
             </div>
             </div>
    </Layout>

@@ -2,8 +2,6 @@ import Layout from "@/components/layout"
 import Chapter from "@/components/blogcomponents/chapter"
 import Subheader from "@/components/blogcomponents/subheader"
 import Bullet from "@/components/blogcomponents/bulletpoints"
-import { SlowBuffer } from "buffer"
-
 
 
 export default function TCPIPnotes() {
