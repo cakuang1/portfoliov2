@@ -7,7 +7,7 @@
 
 ## Overview
 
-This portfolio showcases my journey through the Cloud Resume Challenge, a project designed to demonstrate proficiency in various cloud technologies and services while creating a professional online presence. This challenge was not just about building a resume but also about showcasing my skills in cloud computing.
+Completely serverless. Infracstructure built using terraform.
 
 
 ## What I Accomplished and Learned
