@@ -18,7 +18,7 @@ import Link from "next/link";
   const ProjectItem: React.FC<ProjectItem> = ({items}) => {
     const linkProps = items.deployed
     ? { href: items.link, target: "_blank", rel: "noopener noreferrer" }
-    : { href: items.link };
+    : { href: items.link,target: "_blank", rel: "noopener noreferrer" };
 
     return (
         <Link {...linkProps} >

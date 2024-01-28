@@ -73,8 +73,8 @@ export default function Blog() {
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className=" mt-14">
-          <h1 className="font-bold text-3xl  text-center"><span className="border-b-2 border-purple">Readings</span></h1>=
-                <h2 className="text-lg text-center  mt-4"> Highly Abstract Notes. Some notes are still in progress as I read</h2>
+          <h1 className="font-bold text-3xl  text-center"><span className="border-b-2 border-purple">Readings</span></h1>
+                <h2 className="text-lg text-center  mt-4"> Notes at a high level. Some notes are still in progress </h2>
                   <BlogComponent {...operating}/>
                   <BlogComponent {...algorithms}/>
                   <BlogComponent {...java}/>

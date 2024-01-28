@@ -11,7 +11,7 @@ const stocksimulator = {
     technologies : ["React","TailwindCSS","Django","Yahoo Finance","Docker"],
     languages : ['Javascript',"Python"],
     functionality : ['Allows users to a buy and sell stocks to build their portfolios',"Stock Search up through the yahoo finance API","Tracks the users portfolio and determines profits or losses","Real Time Stock Information"],
-    link : '/projects/stocksimulator'
+    link : 'https://github.com/cakuang1/stocksimulator'
 }
 
 const bookrecc = {
@@ -21,7 +21,7 @@ const bookrecc = {
   technologies : ["React","TailwindCSS","OpenAI","SpringBoot","Redis","GoogleBooks API","Docker"],
   languages : ['Java',"Typescript"],
   functionality : ['Users can create their lists of books using a search feature fed from GoogleBooksAPI',"Recomendation engine powered by OpenAI to suggest new books"],
-  link : '/projects/openai'
+  link : 'https://github.com/cakuang1/OpenAIBookRecommender'
 
 }
 
@@ -32,24 +32,24 @@ const chrome = {
   technologies : ["Flask","Chrome Extension","RabbitMQ","HeatMapJS","Docker"],
   languages : ['JavaScript',"Python"],
   functionality : ['Uses a Chrome extension to track user clicks',"Coordinates are entered into a RabbitMQ queue and consumed by a python script that stores data into a Postgres databse","Provides a heatmap for users that visualize where your clicks are"],
-  link : '/projects/clicktracker'
+  link : 'https://github.com/cakuang1/clickschrome'
 }
 
 const portfolio = {
   image : '/arch.png',
-  title : "CloudPortfolio",
-  description : "Instead of your typical portfolio resume, I decided to tackle the Cloud Resume Challenge, using cloud computing skills to develop a cloud-hosted resume website",
+  title : "Serverless Portfolio",
+  description : "Completely serverless web application built using a variety of  ",
   technologies : ["AWS","NextJS","TailwindCSS"],
   languages : ['TypeScript',"Python"],
   functionality : ['A porfolio page that connects to a DynamoDB database through an API GateWay and Lambda functions',"CI/CD workflows powered by github actions allowing changes to the applications to be conviently tested and deployed"],
-  link : '/projects/cloudresum  e',
+  link : '/projects/cloudresume',
   deployed : true
 }
 
 
 const actionmap = {
   image : '/rubyapp.png',
-  title : "ActionMap",
+  title : "ActionMap (CS169)",
   description : "Worked in a group of 4 to develop a Rails based web application in a two week Agile sprint. Each team member selected a set of user stories and briefed each other during standup meetings. Application deployed on heroku.",
   technologies : ["Rails","Rspec","Cucumber","PostgreSQL"],
   languages : ['Ruby'],
@@ -71,12 +71,13 @@ const data102 = {
 
 const data100 = {
   image : '/data100final.png',
-  title : "Traffic Model",
+  title : "Traffic Model (DATA 100)",
   description : "Built a traffic model using previous commute data to predict travel times. We used a Multivariate Linear regression model,in which we were able to increase model accuracy over multiple iterations.",
   technologies : ["MatPlotLib","scikit-learn"],
   languages : ["Python"],
   functionality : [],
-  link : '/data100.pdf'
+  link : '/data100.pdf',
+  deployed : true
 }
 
 const datapipeline = {
@@ -86,7 +87,7 @@ const datapipeline = {
   technologies : ["AWS S3","Pandas",'SnowFlake',"Docker"],
   languages : ["Python"],
   functionality : ["A batch processing pipeline that is created to develop trainable machine learning data","Data follows a pipeline through such that this trainable data is stored into SnowFlake","Contains an EDA portion in an jupyter notebook to visualize a step by step process of the transformation"],
-  link : '/projects/pipeline'
+  link : 'https://github.com/cakuang1/DDs3tosf'
 }
 
 const punapi = {
@@ -104,12 +105,12 @@ const punapi = {
 
 const leettracker = {
   image : '/leetcode.png',
-  title : "LeetTracker",
-  description : "LeetTracker is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
+  title : "LeetManager",
+  description : "LeetManager is a simple, free-to-use LeetCode productivity app designed to help you schedule your problems and track your overall progress.Hosted on Vercel with Next as front and backend. Postgres hosted on Neon.",
   technologies : ["NextJS","Express",'PostgreSQL(Neon)',"Prisma","TailwindCSS","Neon","Serverless Functions","OAuth"],
   languages : ["Typescript","SQL"],
   functionality : ["Users can Schedule and edit problems in a Kanban view","Graph UI to visualize progress","Plan Tracking for NeetCode's Blind 75 and Neetcode 150"],
-  link : 'https://www.leetcodetracker.codes/',
+  link : 'https://www.leetmanager.com/',
   deployed: true
 }
 
@@ -121,7 +122,7 @@ const remotesf = {
   technologies : ["React","Spring/SpringBoot",'MongoDB(Atlas)',"React Leaflet","TailwindCSS"],
   languages : ["Typescript,Java"],
   functionality : ["Map UI created using OSM(Open Source Map) and Leaflet where users to click to query nearby remote work places"],
-  link : '',
+  link : 'https://wifi-locator.vercel.app/',
   deployed: true
 }
 

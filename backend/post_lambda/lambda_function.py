@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     # Check if the 'click_count' attribute exists in the item
     # If it doesn't exist, set it to the initial increment_value
     update_expression = 'SET click_count = if_not_exists(click_count, :initial) + :increment'
-
+    
     response = dynamodb.update_item(
         TableName=table_name,
         Key={

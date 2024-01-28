@@ -76,6 +76,8 @@ export default function Home() {
     }
   };
 
+  
+
   // Function to make a GET request
   const fetchData = async () => {
     try {
