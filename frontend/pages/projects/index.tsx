@@ -130,7 +130,7 @@ const mapreduce  = {
   image : '/mapreduce.png',
   title : "Multi-Threaded Single Machine MapReduce Framework",
   description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process. Done by simulating w",
-  technologies : [""],
+  technologies : ["Docker"],
   languages : ["Golang"] ,
   functionality : ["Easily customizable by simply altering the reduce and map functions", "Provides a single and multithreaded implementation" , "Simple and easy to use API "],
   link : 'https://github.com/cakuang1/ThreadedMapreduce',
