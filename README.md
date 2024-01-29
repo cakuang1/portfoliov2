@@ -2,12 +2,12 @@
 [![Tests](https://github.com/cakuang1/portfoliov2/actions/workflows/deploynext.yml/badge.svg)](https://github.com/cakuang1/portfoliov2/actions/workflows/deploynext.yml)
 
 
-# Serverless Resume
+# Serverless Portfolio
 
 
 ## Overview
 
-Completely serverless. Infracstructure built using terraform.
+Completely serverless.
 
 
 ## What I Accomplished and Learned
