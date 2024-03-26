@@ -140,9 +140,9 @@ const mapreduce  = {
 const connectfour  = {
   image : '/connect.png',
   title : "Connect4API",
-  description : "Play Connect 4 with a friend directly using a REST API",
+  description : "An API to play connect 4 from your terminal or web browser with a friend",
   technologies : ["Docker","AWS EC2", "NGINX", "Redis" , "Kafka"],
-  languages : ["Golang"] ,
+  languages : ["Golang"] ,    
   functionality : ["Connect4API is a web service that enables users to play the classic game of Connect 4 with friends or against themselves","Provides a set of HTTP endpoints that allow players to create game sessions, join sessions, make moves on the game board, and receive real-time updates during gameplay"],
   link : 'https://connectfourapi.com',
   deployed : true,

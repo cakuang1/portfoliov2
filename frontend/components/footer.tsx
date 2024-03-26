@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="text-gray-500     p-4">
       <div className="container mx-auto flex justify-between items-center w-3/5 text-sm">
         <div>
-        © 2023 Cary Kuang. All rights reserved.
+        © 2024 Cary Kuang. All rights reserved.
         </div>
         <div>
         <a
