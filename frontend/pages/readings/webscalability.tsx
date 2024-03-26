@@ -9,6 +9,7 @@ export default function WebScalability() {
           <div className="text-center mt-14">
                 <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Web Scalability for startup engineers</h1>
                 <h2>Notes</h2>
+              </div>
                 <Chapter title="1 Core concepts"/>
                 <Subheader title="Scalability"/>
                 <p>Ability to handle more users without affecting the user experience</p>
@@ -92,8 +93,7 @@ DNS : Third party DNS providers are typically  used to convert domain names to a
 <p>Eventual consistency is a property of a system  where different nodes have different versions of data, but changes will 'eventually propogate'. This is a tradeoff for high availability. This is seen in DynamoDB</p>
 <p>Cassandra clients can send </p>
 
-            </div>
-            </div>
+            </div>            
    </Layout>
   )
 }

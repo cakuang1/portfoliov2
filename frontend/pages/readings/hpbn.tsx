@@ -7,6 +7,7 @@ import Subheader from "@/components/blogcomponents/subheader"
 
 export default function Hpbn() {
   return (
+
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
@@ -158,5 +159,6 @@ The bandwidth-delay product (BDP) is a network parameter that represents the amo
             </div>  
             </div>
    </Layout>
+
   )
 }

@@ -76,7 +76,7 @@ export default function DistributedSystems() {
                 <p>Lamport clock : Messages between processes create synchronization points. The idea is that the maximum of the time stamps is the one that is kept</p>
                 <Subheader title="8.3 Vector clocks"/>
                 <p>Array of counters, one for each process in the system. Each process has its own copy</p>
-                <p>Initially, all the clocks are set to zero -> Every time, an Internal event occurs in a process, the value of the processes’s logical clock in the vector is incremented by 1 -> every time a process sends a message, the value of the processes’s logical clock in the vector is incremented by 1.</p>
+                <p>Initially, all the clocks are set to zero - Every time, an Internal event occurs in a process, the value of the processes’s logical clock in the vector is incremented by 1 -> every time a process sends a message, the value of the processes’s logical clock in the vector is incremented by 1.</p>
                 <Chapter title="Chapter 9 Leader election"/>
                 <p>Leaders are elected among a set of candidate processes. This algorithm needs to guarentee that there is at most one leader at any given time, and an election eventually completes even in presence of failures</p>
                 <Subheader title="9.1 Raft leader election"/>

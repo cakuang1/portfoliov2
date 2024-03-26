@@ -95,7 +95,7 @@ const punapi = {
   title : "punapi.rest",
   description : "A fun free to use REST API so you can develop your apps using puns and pun based memes! Currently deployed on Vercel.",
   technologies : ["NextJS","Prisma",'PostgreSQL',"NodeJS","TailwindCSS","Edge/Serverless Functions","QueryCaching","Vercel Blob Storage"],
-  languages : ["Typescript"],
+  languages : ["Golang","Typescript"],
   functionality : ["Documented API for multiple endpoints to GET puns and memes","Deployed edge functions and cached endpoints for optimization",],
   link : 'https://www.punapi.rest/',
   deployed: true
@@ -129,11 +129,22 @@ const remotesf = {
 const mapreduce  = {
   image : '/mapreduce.png',
   title : "Multi-Threaded Single Machine MapReduce Framework",
-  description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process. Done by simulating w",
+  description : "Basic implementation of a multi-threaded MapReduce framework in a single Golang process. Done by simulating ",
   technologies : ["Docker"],
   languages : ["Golang"] ,
   functionality : ["Easily customizable by simply altering the reduce and map functions", "Provides a single and multithreaded implementation" , "Simple and easy to use API "],
   link : 'https://github.com/cakuang1/ThreadedMapreduce',
+  deployed : false,
+}
+
+const connectfour  = {
+  image : '/connect.png',
+  title : "Connect4API",
+  description : "Play Connect 4 with a friend directly using a REST API",
+  technologies : ["Docker","AWS EC2", "NGINX", "Redis" , "Kafka"],
+  languages : ["Golang"] ,
+  functionality : ["Connect4API is a web service that enables users to play the classic game of Connect 4 with friends or against themselves","Provides a set of HTTP endpoints that allow players to create game sessions, join sessions, make moves on the game board, and receive real-time updates during gameplay"],
+  link : 'https://connectfourapi.com',
   deployed : true,
 }
 
@@ -157,6 +168,7 @@ const Project: React.FC = () => {
                     <div className="mx-auto max-w-6xl  ">
                     <ProjectItem items={leettracker} />
                         <ProjectItem items={punapi} />
+                      <ProjectItem items={connectfour}/>
                       <ProjectItem items={stocksimulator}/>
                       <ProjectItem items={bookrecc}/>
                       <ProjectItem items={portfolio}/>

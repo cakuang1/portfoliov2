@@ -4,13 +4,16 @@ import Subheader from "@/components/blogcomponents/subheader"
 import Bullet from "@/components/blogcomponents/bulletpoints"
 
 
-export default function TCPIPnotes() {
+export default function Java() {
   return (
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
-                <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">DataBase Internals</h1>
+                <h1 className="font-bold text-3xl inline-block border-b-2 border-purple  ">Grokking Algorithms</h1>
                 <h2>Notes for Java Roadmap <a>https://roadmap.sh/java</a></h2>
+            </div>
+
+
                 <Chapter title="Learn the fundamentals"/>
                 <Subheader title="Basic Syntax"/>
                 <p>Java is an OOP language, which is a programming paradigm that uses objects to design and strcuture software </p>
@@ -113,7 +116,7 @@ export default function TCPIPnotes() {
                 <p>Will not go in depth</p>
                 <Subheader title="Generics"/>
                 <p>Generics in Java provide a way to create classes, interfaces, and methods with placeholders for data types.</p>
-                <p>class Test<T, U> as an example , takes in types T,U as parameters. These parameters can be used throughout your class as placeholders for the type you want to pass in, similar to passing in parameters in a function</p>
+                <p>class Test as an example , takes in types T,U as parameters. These parameters can be used throughout your class as placeholders for the type you want to pass in, similar to passing in parameters in a function</p>
                 <Subheader title="Streams"/>
                 <p>Streams were introduced in Java8, used to process a collection of items.They are not data structures, but takes input from Collections</p>
                 <p>Two types of stream Operations. Intermediate and Terminate.</p>
@@ -226,7 +229,7 @@ Build tools are not only limited to compiling code; they can also help with pack
           "@Value:Used to inject values from properties files or other sources into Spring beans. It can be applied to fields, methods, and constructor parameters."]}/>
 
             </div>
-            </div>
+
    </Layout>
   )
 }

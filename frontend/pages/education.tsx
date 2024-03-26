@@ -34,9 +34,10 @@ const Education = () => {
             <li className="" >Structure and Interpretation of Computer Programs (CS 61A)</li>
             <li className="">Data Structures (CS 61B)</li>
             <li className="">Great Ideas in Computer Architecture (Machine Structures) (CS 61C)</li>
-            <li className="">Introduction to Software Engineering (CS 169)</li>
-            <li>Designing Information Devices and Systems (EECS 16A)</li>
             <li>Discrete Mathematics and Probability Theory (CS 70)</li>
+            <li className="">Introduction to Software Engineering (CS 169)</li>
+            <li>Databases/Data Engineering (Data 101)</li>
+            <li>Designing Information Devices and Systems (EECS 16A)</li>
             <li>Efficient Algorithms and Intractable Problems (CS 170)</li>
             <li>Introduction to Algorithmic Thinking (CS 198)</li>
           </ul>
@@ -47,7 +48,7 @@ const Education = () => {
           <li>Foundations of Data Science (DATA 8)</li>
           <li>Linear Algebra for Data Science(STAT 89A)</li>
           <li>Principles and Techniques of Data Science (Data 100)</li>
-          <li>Data Engineering (Data 101)</li>
+
           <li>Data, Inference, and Decisions(Data C102)</li>
           <li>Human Contexts and Ethics of Data (Data C104)</li>
           <li>Probability for Data Science(DATA 140)</li>

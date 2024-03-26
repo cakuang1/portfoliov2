@@ -1,12 +1,12 @@
 import Layout from "@/components/layout"
-
+import Link from "next/link";
 
 const BlogComponent: React.FC<BlogProps> = ({ title, description, link ,categories}) => {
   return (
+    <Link href={link} target="_blank" rel="noopener noreferrer">
 <div className="border mt-3 p-6 rounded-lg transition duration-300 ease-in-out hover:bg-gray-50 ">
       <h2 className="text-xl">{title}</h2>
       <p className="text-gray-400">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
       <div className="flex mt-2 ">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6 16h8v-2H6v2Zm0-4h12v-2H6v2Zm-2 8q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h6l2 2h8q.825 0 1.413.588T22 8v10q0 .825-.587 1.413T20 20H4Zm0-2h16V8h-8.825l-2-2H4v12Zm0 0V6v12Z"/></svg>
       <div>            {categories.map((category, index) => (
@@ -15,8 +15,8 @@ const BlogComponent: React.FC<BlogProps> = ({ title, description, link ,categori
               </span>
             ))} </div>
       </div>
-      </a>
     </div>
+</Link>
   );
 };
 
@@ -31,43 +31,48 @@ interface BlogProps {
 const operating = {
   title: "Operating Systems : Three Easy Pieces",
   description: "The operating systems textbook to fill in some of the lower level stuff I wanted to learn about",
-  link:"ostep",
+  link:"/readings/ostep",
   categories  : ["Operating Systems Concurency","Virtualization"]
 }
 
 const java = {
   title: "Java Roadmap",
   description: "Understanding the Java language through roadmap.sh",
-  link:"java",
+  link:"/readings/java",
   categories : ["Programming Languages", "Java"]
 }
 
 const algorithms = {
   title: "Grokking Algorithms",
   description: "Fun intuitive book about common algorithms and data structures. Rereference before interviews",
-  link:"grokkingalgorithms",
+  link:"/readings/grokkingalgorithms",
   categories : ["Algorithms","Data Structures","Interview Prep"]
 }
 const databaseinternals = {
   title: "DataBase Internals",
   description: "Understanding concepts behind modern database and storage engine internals",
-  link:"databaseinternals",
+  link:"/readings/databaseinternals",
   categories: ['Databases',"Indexes"]
 }
 const hpbn = {
   title: "High Performance Browser Networking",
   description: "Wanted to learn more about TCP/IP and HTTP. Skipped a majority of the book",
-  link:"hpbn",
+  link:"/readings/hpbn",
   categories : ["Networking"]
 }
-
 const systemdesign = {
   title: "System Design Interview - An Insider's Guide Volume 1",
   description: "System Design ",
-  link:"systemdesign",
-  categories : ["Networking"]
+  link:"/readings/systemdesign",
+  categories : ["System Design"]
 }
 
+const webscale = {
+  title: "Web Scalability for Startup Engineers",
+  description: "More system design",
+  link:"/readings/webscalability",
+  categories : ["System Design"]
+}
 export default function Blog() {
   return (
     <Layout> 
@@ -81,7 +86,7 @@ export default function Blog() {
                   <BlogComponent {...databaseinternals}/>
                   <BlogComponent {...hpbn}/>
                   <BlogComponent {...systemdesign}/> 
-        
+                  <BlogComponent {...webscale}/> 
                 <div>
                 </div>
             </div>

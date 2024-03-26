@@ -7,6 +7,7 @@ import Bullet from "@/components/blogcomponents/bulletpoints"
 
 export default function GrokkingAlgorithms() {
   return (
+
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
@@ -219,5 +220,6 @@ export default function GrokkingAlgorithms() {
                 </div>
             </div>
    </Layout>
+
   )
 }

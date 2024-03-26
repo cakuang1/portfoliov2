@@ -8,6 +8,7 @@ import Bullet from "@/components/blogcomponents/bulletpoints"
 
 export default function GrokkingAlgorithms() {
   return (
+
     <Layout> 
           <div className='w-3/5 mx-auto'>
           <div className="text-center mt-14">
@@ -432,7 +433,9 @@ What are the important aspects of the implementation?</p>
 <p>open() routine returns a file descriptor that allows you to call other methods to access the file (read and write)</p>
 <p></p>
             </div>
+            </div>
                 
    </Layout>
+
   )
 }
